@@ -1,0 +1,15 @@
+C:\Users\aless\source\repos\AccessControlSystem\MobileApplication\ACSMobile\ACSApp\ACSApp\bin\Debug\netstandard2.0\ACSApp.deps.json
+C:\Users\aless\source\repos\AccessControlSystem\MobileApplication\ACSMobile\ACSApp\ACSApp\bin\Debug\netstandard2.0\ACSApp.dll
+C:\Users\aless\source\repos\AccessControlSystem\MobileApplication\ACSMobile\ACSApp\ACSApp\bin\Debug\netstandard2.0\ACSApp.pdb
+C:\Users\aless\source\repos\AccessControlSystem\MobileApplication\ACSMobile\ACSApp\ACSApp\obj\Debug\netstandard2.0\ACSApp.csproj.AssemblyReference.cache
+C:\Users\aless\source\repos\AccessControlSystem\MobileApplication\ACSMobile\ACSApp\ACSApp\obj\Debug\netstandard2.0\ACSApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\aless\source\repos\AccessControlSystem\MobileApplication\ACSMobile\ACSApp\ACSApp\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\aless\source\repos\AccessControlSystem\MobileApplication\ACSMobile\ACSApp\ACSApp\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\aless\source\repos\AccessControlSystem\MobileApplication\ACSMobile\ACSApp\ACSApp\obj\Debug\netstandard2.0\ACSApp.AssemblyInfoInputs.cache
+C:\Users\aless\source\repos\AccessControlSystem\MobileApplication\ACSMobile\ACSApp\ACSApp\obj\Debug\netstandard2.0\ACSApp.AssemblyInfo.cs
+C:\Users\aless\source\repos\AccessControlSystem\MobileApplication\ACSMobile\ACSApp\ACSApp\obj\Debug\netstandard2.0\ACSApp.csproj.CoreCompileInputs.cache
+C:\Users\aless\source\repos\AccessControlSystem\MobileApplication\ACSMobile\ACSApp\ACSApp\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\aless\source\repos\AccessControlSystem\MobileApplication\ACSMobile\ACSApp\ACSApp\obj\Debug\netstandard2.0\ACSApp.dll
+C:\Users\aless\source\repos\AccessControlSystem\MobileApplication\ACSMobile\ACSApp\ACSApp\obj\Debug\netstandard2.0\refint\ACSApp.dll
+C:\Users\aless\source\repos\AccessControlSystem\MobileApplication\ACSMobile\ACSApp\ACSApp\obj\Debug\netstandard2.0\ACSApp.pdb
+C:\Users\aless\source\repos\AccessControlSystem\MobileApplication\ACSMobile\ACSApp\ACSApp\obj\Debug\netstandard2.0\ref\ACSApp.dll

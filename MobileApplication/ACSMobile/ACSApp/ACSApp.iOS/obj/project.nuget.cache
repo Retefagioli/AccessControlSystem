@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "co2pNmrlxg7FfcMj87tKDGqdvSNT3RugWefU2NP4K79D7VKOX/le8SftB/x1glFd1QoeaxXFwIpJnaTYym/6oA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\aless\\source\\repos\\AccessControlSystem\\MobileApplication\\ACSMobile\\ACSApp\\ACSApp.iOS\\ACSApp.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\aless\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\aless\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
+    "C:\\Users\\aless\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
+  ],
+  "logs": []
+}
