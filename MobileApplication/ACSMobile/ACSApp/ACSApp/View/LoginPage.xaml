@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="ACSApp.View.LoginPage"
+             xmlns:local="clr-namespace:ACSApp.ViewModels"
+             Shell.PresentationMode="ModalAnimated"
+             Shell.TabBarIsVisible="False"
+             Shell.FlyoutBehavior="Disabled"
+             Shell.NavBarIsVisible="False"
+             >
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ButtonStyle" TargetType="Button">
+
+            </Style>
+            
+            <Style x:Key="EntryStyle" TargetType="Entry">
+                <Setter Property="Background" Value="White"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.BindingContext>
+        <local:LoginPageViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center" Margin="40">
+            <StackLayout Margin="0" Padding="0,140,0,0" VerticalOptions="StartAndExpand">
+                <Image x:Name="Logo" Aspect="AspectFit" HeightRequest="80"/>
+            </StackLayout>
+            <StackLayout VerticalOptions="CenterAndExpand" Padding="0,0,0,120">
+                <Entry Text ="{Binding LoginToken, Mode=TwoWay}" Placeholder="Insert the token" HorizontalTextAlignment="Start" WidthRequest="500" Style="{StaticResource EntryStyle}">
+                </Entry>
+                <Label  Text="{Binding ErrorMessage}" TextColor="Red" FontSize="12"/>
+                <Button x:Name="ButtonX" Text="Verify token" Style="{StaticResource ButtonStyle}" Command="{Binding OnLoginCommand}" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
