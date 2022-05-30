@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SJ8wLdYjU2MdQuw0TYJed88L/S9lyEZR2dEF5En+2/aZI1VBx+xZv372Iqb4QSmWEIDD144XVqgOvI7Hs7gIbg==",
+  "dgSpecHash": "8NHQlY19OW2mkAYaXQm96/0qH6AHAGjE5KkEEdOSc1JIkB75XXUlmYamV6vxSaOl6ptCis9691r0UFnPA4f0PA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\aless\\source\\repos\\AccessControlSystem\\MobileApplication\\ACSMobile\\ACSApp\\ACSApp.iOS\\ACSApp.iOS.csproj",
+  "projectFilePath": "C:\\Users\\aless\\Source\\Repos\\AccessControlSystem\\MobileApplication\\ACSMobile\\ACSApp\\ACSApp.iOS\\ACSApp.iOS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\aless\\.nuget\\packages\\microsoft.web.xdt\\3.1.0\\microsoft.web.xdt.3.1.0.nupkg.sha512",
     "C:\\Users\\aless\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",

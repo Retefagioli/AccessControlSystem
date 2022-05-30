@@ -3,6 +3,7 @@ using ACSApp.Settings;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -28,13 +29,13 @@ namespace ACSApp.ViewModels
             //new AuthService().getAuthTokenResult(LoginToken);
             if (LoginToken == "Alessandro")
             {
-                Console.WriteLine("True");
+                Debug.WriteLine("Autentication is completed", "Autentication System");
                 SettingsController.setAutentication();
                 await Shell.Current.GoToAsync("///main");
             }
             else {
                 ErrorMessage = "Password non corretta";
-                Console.WriteLine($"La password e' sbagliata {ErrorMessage}");
+                Debug.WriteLine($"La password e' sbagliata {ErrorMessage}", "Autentication System");
                 LoginToken = "";
             }
 

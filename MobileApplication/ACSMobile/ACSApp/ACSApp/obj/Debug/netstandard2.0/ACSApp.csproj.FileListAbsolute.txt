@@ -16,5 +16,4 @@ C:\Users\aless\source\repos\AccessControlSystem\MobileApplication\ACSMobile\ACSA
 C:\Users\aless\Source\Repos\AccessControlSystem\MobileApplication\ACSMobile\ACSApp\ACSApp\obj\Debug\netstandard2.0\View\LoginPage.xaml.g.cs
 C:\Users\aless\Source\Repos\AccessControlSystem\MobileApplication\ACSMobile\ACSApp\ACSApp\obj\Debug\netstandard2.0\View\LoadingPage.xaml.g.cs
 C:\Users\aless\source\repos\AccessControlSystem\MobileApplication\ACSMobile\ACSApp\ACSApp\obj\Debug\netstandard2.0\View\MainPageContent.xaml.g.cs
-C:\Users\aless\source\repos\AccessControlSystem\MobileApplication\ACSMobile\ACSApp\ACSApp\obj\Debug\netstandard2.0\View\NFCsenderView.xaml.g.cs
-C:\Users\aless\source\repos\AccessControlSystem\MobileApplication\ACSMobile\ACSApp\ACSApp\obj\Debug\netstandard2.0\View\NFCreceiverView.xaml.g.cs
+C:\Users\aless\Source\Repos\AccessControlSystem\MobileApplication\ACSMobile\ACSApp\ACSApp\obj\Debug\netstandard2.0\View\BadgeCardView.xaml.g.cs

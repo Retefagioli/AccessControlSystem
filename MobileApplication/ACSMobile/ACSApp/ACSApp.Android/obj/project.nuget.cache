@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1BwvgiOqZSLLnS0/hhoasaB+eeAnCxgmdpNMc5MHKMxP0gT78Xj1xkT9+UndYCiz/iNwpZp9WGXHYEt7ubNXEA==",
+  "dgSpecHash": "eh+gzreW8XzAfG0kFQIfDVMHv/U0gmLAo6doCak5KD+Z9DzVPEkMC6xCnwwsXCEwQ2gjA3foizVNDCPrHByvTA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\aless\\source\\repos\\AccessControlSystem\\MobileApplication\\ACSMobile\\ACSApp\\ACSApp.Android\\ACSApp.Android.csproj",
+  "projectFilePath": "C:\\Users\\aless\\Source\\Repos\\AccessControlSystem\\MobileApplication\\ACSMobile\\ACSApp\\ACSApp.Android\\ACSApp.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\aless\\.nuget\\packages\\microsoft.web.xdt\\3.1.0\\microsoft.web.xdt.3.1.0.nupkg.sha512",
     "C:\\Users\\aless\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",

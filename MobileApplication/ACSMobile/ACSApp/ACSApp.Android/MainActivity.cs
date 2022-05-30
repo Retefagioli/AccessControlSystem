@@ -19,7 +19,7 @@ namespace ACSApp.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             CrossNFC.Init(this);
-            Rg.Plugins.Popup.Popup.Init(this);
+            RequestedOrientation = ScreenOrientation.Portrait; 
 
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             
@@ -35,22 +35,14 @@ namespace ACSApp.Droid
         protected override void OnResume()
         {
             base.OnResume();
-
-            // Plugin NFC: Restart NFC listening on resume (needed for Android 10+) 
             CrossNFC.OnResume();
         }
         protected override void OnNewIntent(Intent intent)
         {
             base.OnNewIntent(intent);
-
-            // Plugin NFC: Tag Discovery Interception
             CrossNFC.OnNewIntent(intent);
         }
 
-        public override void OnBackPressed()
-        {
-            Rg.Plugins.Popup.Popup.SendBackPressed(base.OnBackPressed);
-        }
 
     }
 }
