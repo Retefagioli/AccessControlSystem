@@ -23,6 +23,8 @@ namespace ACSApp.ViewModels
             Console.WriteLine("Autentication Phase");
             Console.WriteLine(SettingsController.isAutenticated());
 
+            SettingsController.renewConfig();
+            
             if (SettingsController.isAutenticated() == "true")
             {
                 SettingsController.disableAutentication();

@@ -4,7 +4,7 @@
              x:Class="ACSApp.View.MainPageContent">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
+            <Label x:Name="welcomeText" Text="" FontSize="Large" FontAttributes="Bold"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
         </StackLayout>

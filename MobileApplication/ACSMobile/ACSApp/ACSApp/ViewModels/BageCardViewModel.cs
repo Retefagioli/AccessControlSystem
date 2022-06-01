@@ -28,6 +28,8 @@ namespace ACSApp.ViewModels
                 CrossNFC.Current.OnMessageReceived += Current_OnMessageReceived;
                 CrossNFC.Current.OnTagDiscovered -= Current_OnTagDiscovered;
                 CrossNFC.Current.OnTagDiscovered += Current_OnTagDiscovered;
+                CrossNFC.Current.OnMessagePublished -= Current_OnMessagePublished;
+                CrossNFC.Current.OnMessagePublished += Current_OnMessagePublished;
                 Debug.WriteLine("RESUBSCRIBE EVENTS", "RESUBSCRIBER");
                
                 return; }
@@ -35,14 +37,27 @@ namespace ACSApp.ViewModels
 
             CrossNFC.Current.OnMessageReceived += Current_OnMessageReceived;
             CrossNFC.Current.OnTagDiscovered += Current_OnTagDiscovered;
+            CrossNFC.Current.OnMessagePublished += Current_OnMessagePublished;
 
             
         }
 
-        
+        private void Current_OnMessagePublished(ITagInfo tagInfo)
+        {
+            try {
+                CrossNFC.Current.StopPublishing();
+                displayMessage("Scrittura messaggio avvenuta con successo!", "YES!");
+            } catch (Exception e)
+            {
+                displayMessage(e.Message, "ATTENZIONE");
+            }
+        }
+
         public override void UnsubscribeEvents()
         {
             CrossNFC.Current.OnMessageReceived -= Current_OnMessageReceived;
+            CrossNFC.Current.OnTagDiscovered -= Current_OnTagDiscovered;
+            CrossNFC.Current.OnMessagePublished -= Current_OnMessagePublished;
 
         }
 

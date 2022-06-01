@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ACSApp.Models;
+using ACSApp.Settings;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +16,21 @@ namespace ACSApp.View
     {
         public MainPageContent()
         {
+            
+            
             InitializeComponent();
+        }
+
+        protected override void OnAppearing()
+        {
+            initWelcome();
+            base.OnAppearing();
+        }
+
+        public void initWelcome()
+        { 
+            var newer = SettingsController.getUserData();
+            welcomeText.Text = "Benvenuto " + newer.name + " " + newer.surname + " !";
         }
     }
 }

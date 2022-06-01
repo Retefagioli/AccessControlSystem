@@ -12,7 +12,7 @@ namespace ACSApp.Settings
     {
         public bool isDeviceIOS { get; set; } = false;
         public const string ALERT_TITLE = "NFC";
-        public const string MIME_TYPE = "application/com.companyname.nfcsample";
+        public const string MIME_TYPE = "application/com.retefagioli.nfcsample";
 
         public bool eventsAlreadySubscribed { get; set; } = false;
 

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UFOdZZXDrAyKngsHyi7pN+gK+6Cdy/i5fm7OtHiv/82zCU7R898zOQDW160S2AtIenQ6c+kqPJtfo13V6+dODw==",
+  "dgSpecHash": "MovyRSsh+ggJPjF+pNLyqF68c2Aoa885g6tBmpPH6MwJchSDoyT0I1Lt+hoVHULtsy5VlXRP6An7Ykgfl/s8gQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\aless\\Source\\Repos\\AccessControlSystem\\MobileApplication\\ACSMobile\\ACSApp\\ACSApp\\ACSApp.csproj",
+  "projectFilePath": "C:\\Users\\aless\\source\\repos\\AccessControlSystem\\MobileApplication\\ACSMobile\\ACSApp\\ACSApp\\ACSApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\aless\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\aless\\.nuget\\packages\\microsoft.web.xdt\\3.1.0\\microsoft.web.xdt.3.1.0.nupkg.sha512",

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ACSApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Xamarin.Essentials;
@@ -21,18 +22,24 @@ namespace ACSApp.Settings
             Preferences.Remove("Autentication");
         }
 
-        public static string getBaseUrl(string update_url)
+        public static void renewConfig()
         {
-
-            Preferences.Set("Base_url", update_url);
-            return Preferences.Get("Base_url", "https://localhost:8080/");
+            string auth = Preferences.Get("Autentication", "false");
+            Preferences.Set("Autentication", auth);
         }
 
-        public static string getTokenApi(string update_api)
+        public static void saveUserData(string stringa)
         {
-            Preferences.Set("TokenApi", update_api);
-            return Preferences.Get("TokenApi", "/api/validateToken");
+            Preferences.Set("UserData", stringa);
         }
 
-    }    
+        public static UserModel getUserData()
+        {
+            string x = Preferences.Get("UserData", "");
+            Console.WriteLine(x);
+            return UserModel.fromString(x);
+        }
+    }
+
+
 }

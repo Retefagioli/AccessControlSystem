@@ -26,8 +26,9 @@ namespace ACSApp.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         private async void OnLoginSystem()
         {
-            //new AuthService().getAuthTokenResult(LoginToken);
-            if (LoginToken == "Alessandro")
+            AuthService auth = new AuthService();
+            bool result = await auth.validateToken(LoginToken);
+            if (result)
             {
                 Debug.WriteLine("Autentication is completed", "Autentication System");
                 SettingsController.setAutentication();
