@@ -1,4 +1,5 @@
-﻿using Plugin.NFC;
+﻿using ACSApp.Autenticazione;
+using Plugin.NFC;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,7 @@ namespace ACSApp.Settings
         public bool isDeviceIOS { get; set; } = false;
         public const string ALERT_TITLE = "NFC";
         public const string MIME_TYPE = "application/com.retefagioli.nfcsample";
-
+        public HttpServices services = new HttpServices();
         public bool eventsAlreadySubscribed { get; set; } = false;
 
 
@@ -63,7 +64,9 @@ namespace ACSApp.Settings
         
         public string GetMessage(NFCNdefRecord record)
         {
-            var message = $"Message: {record.Message}";
+            var x = record.Message;
+            //services.sendTagNfc(x);
+            var message = $"Message: {x}";
             message += Environment.NewLine;
             message += $"RawMessage: {Encoding.UTF8.GetString(record.Payload)}";
             message += Environment.NewLine;

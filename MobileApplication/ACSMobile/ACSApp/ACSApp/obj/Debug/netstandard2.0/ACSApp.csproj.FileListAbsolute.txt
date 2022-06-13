@@ -17,3 +17,4 @@ C:\Users\aless\Source\Repos\AccessControlSystem\MobileApplication\ACSMobile\ACSA
 C:\Users\aless\Source\Repos\AccessControlSystem\MobileApplication\ACSMobile\ACSApp\ACSApp\obj\Debug\netstandard2.0\View\LoadingPage.xaml.g.cs
 C:\Users\aless\source\repos\AccessControlSystem\MobileApplication\ACSMobile\ACSApp\ACSApp\obj\Debug\netstandard2.0\View\MainPageContent.xaml.g.cs
 C:\Users\aless\Source\Repos\AccessControlSystem\MobileApplication\ACSMobile\ACSApp\ACSApp\obj\Debug\netstandard2.0\View\BadgeCardView.xaml.g.cs
+C:\Users\aless\source\repos\AccessControlSystem\MobileApplication\ACSMobile\ACSApp\ACSApp\obj\Debug\netstandard2.0\View\LogsView.xaml.g.cs

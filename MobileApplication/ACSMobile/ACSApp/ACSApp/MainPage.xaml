@@ -22,5 +22,10 @@
             <ShellContent ContentTemplate="{DataTemplate local:BadgeCardView}" />
         </Tab>
     </FlyoutItem>
+    <FlyoutItem Title="Logs">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate local:LogsView}"/>
+        </Tab>
+    </FlyoutItem>
 
 </Shell>

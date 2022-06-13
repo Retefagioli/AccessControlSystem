@@ -30,7 +30,7 @@ namespace ACSApp.View
         public void initWelcome()
         { 
             var newer = SettingsController.getUserData();
-            welcomeText.Text = "Benvenuto " + newer.name + " " + newer.surname + " !";
+            //welcomeText.Text = "Benvenuto " + newer.name + " " + newer.surname + " !";
         }
     }
 }

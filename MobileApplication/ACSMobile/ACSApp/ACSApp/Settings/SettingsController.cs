@@ -39,6 +39,16 @@ namespace ACSApp.Settings
             Console.WriteLine(x);
             return UserModel.fromString(x);
         }
+
+        public static void setUserId(int id)
+        {
+            Preferences.Set("UserId", id);
+        }
+
+        public static int getUserId()
+        {
+            return Preferences.Get("UserId", -1);
+        }
     }
 
 

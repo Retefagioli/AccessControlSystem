@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ACSApp.ViewModels"
+             x:Class="ACSApp.View.LogsView">
+
+    <ContentPage.BindingContext>
+        <local:LogsPageViewModel/>
+    </ContentPage.BindingContext>
+
+    <ListView BackgroundColor="Transparent" x:Name="ListViewItems">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <FlexLayout JustifyContent="SpaceBetween">
+                        
+                        <Label Text="{Binding dateTime}" FontSize="Medium" HorizontalOptions="Center"/>
+                        <Label Text="{Binding sensorName}" FontSize="Medium" Padding="10"/>
+                    </FlexLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+    
+</ContentPage>

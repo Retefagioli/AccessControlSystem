@@ -392,6 +392,98 @@ app_system_properties:
 .L.env.buf.88:
 	.zero	63
 	.size	.L.env.buf.88, 63
+	.type	.L.env.buf.89, @object
+.L.env.buf.89:
+	.zero	63
+	.size	.L.env.buf.89, 63
+	.type	.L.env.buf.90, @object
+.L.env.buf.90:
+	.zero	63
+	.size	.L.env.buf.90, 63
+	.type	.L.env.buf.91, @object
+.L.env.buf.91:
+	.zero	63
+	.size	.L.env.buf.91, 63
+	.type	.L.env.buf.92, @object
+.L.env.buf.92:
+	.zero	63
+	.size	.L.env.buf.92, 63
+	.type	.L.env.buf.93, @object
+.L.env.buf.93:
+	.zero	63
+	.size	.L.env.buf.93, 63
+	.type	.L.env.buf.94, @object
+.L.env.buf.94:
+	.zero	63
+	.size	.L.env.buf.94, 63
+	.type	.L.env.buf.95, @object
+.L.env.buf.95:
+	.zero	63
+	.size	.L.env.buf.95, 63
+	.type	.L.env.buf.96, @object
+.L.env.buf.96:
+	.zero	63
+	.size	.L.env.buf.96, 63
+	.type	.L.env.buf.97, @object
+.L.env.buf.97:
+	.zero	63
+	.size	.L.env.buf.97, 63
+	.type	.L.env.buf.98, @object
+.L.env.buf.98:
+	.zero	63
+	.size	.L.env.buf.98, 63
+	.type	.L.env.buf.99, @object
+.L.env.buf.99:
+	.zero	63
+	.size	.L.env.buf.99, 63
+	.type	.L.env.buf.100, @object
+.L.env.buf.100:
+	.zero	63
+	.size	.L.env.buf.100, 63
+	.type	.L.env.buf.101, @object
+.L.env.buf.101:
+	.zero	63
+	.size	.L.env.buf.101, 63
+	.type	.L.env.buf.102, @object
+.L.env.buf.102:
+	.zero	63
+	.size	.L.env.buf.102, 63
+	.type	.L.env.buf.103, @object
+.L.env.buf.103:
+	.zero	63
+	.size	.L.env.buf.103, 63
+	.type	.L.env.buf.104, @object
+.L.env.buf.104:
+	.zero	63
+	.size	.L.env.buf.104, 63
+	.type	.L.env.buf.105, @object
+.L.env.buf.105:
+	.zero	63
+	.size	.L.env.buf.105, 63
+	.type	.L.env.buf.106, @object
+.L.env.buf.106:
+	.zero	63
+	.size	.L.env.buf.106, 63
+	.type	.L.env.buf.107, @object
+.L.env.buf.107:
+	.zero	63
+	.size	.L.env.buf.107, 63
+	.type	.L.env.buf.108, @object
+.L.env.buf.108:
+	.zero	63
+	.size	.L.env.buf.108, 63
+	.type	.L.env.buf.109, @object
+.L.env.buf.109:
+	.zero	63
+	.size	.L.env.buf.109, 63
+	.type	.L.env.buf.110, @object
+.L.env.buf.110:
+	.zero	63
+	.size	.L.env.buf.110, 63
+	.type	.L.env.buf.111, @object
+.L.env.buf.111:
+	.zero	63
+	.size	.L.env.buf.111, 63
 	# Bundled assemblies data
 
 	.type	bundled_assemblies, @object
@@ -1023,7 +1115,168 @@ bundled_assemblies:
 	.long	0x0	# name_length
 	.long	.L.env.buf.88	# name
 
-	.size	bundled_assemblies, 2136
+	.long	0xffffffff	# apk_fd
+	.long	0x0	# data_offset
+	.long	0x0	# data_size
+	.long	0x0	# data
+	.long	0x0	# name_length
+	.long	.L.env.buf.89	# name
+
+	.long	0xffffffff	# apk_fd
+	.long	0x0	# data_offset
+	.long	0x0	# data_size
+	.long	0x0	# data
+	.long	0x0	# name_length
+	.long	.L.env.buf.90	# name
+
+	.long	0xffffffff	# apk_fd
+	.long	0x0	# data_offset
+	.long	0x0	# data_size
+	.long	0x0	# data
+	.long	0x0	# name_length
+	.long	.L.env.buf.91	# name
+
+	.long	0xffffffff	# apk_fd
+	.long	0x0	# data_offset
+	.long	0x0	# data_size
+	.long	0x0	# data
+	.long	0x0	# name_length
+	.long	.L.env.buf.92	# name
+
+	.long	0xffffffff	# apk_fd
+	.long	0x0	# data_offset
+	.long	0x0	# data_size
+	.long	0x0	# data
+	.long	0x0	# name_length
+	.long	.L.env.buf.93	# name
+
+	.long	0xffffffff	# apk_fd
+	.long	0x0	# data_offset
+	.long	0x0	# data_size
+	.long	0x0	# data
+	.long	0x0	# name_length
+	.long	.L.env.buf.94	# name
+
+	.long	0xffffffff	# apk_fd
+	.long	0x0	# data_offset
+	.long	0x0	# data_size
+	.long	0x0	# data
+	.long	0x0	# name_length
+	.long	.L.env.buf.95	# name
+
+	.long	0xffffffff	# apk_fd
+	.long	0x0	# data_offset
+	.long	0x0	# data_size
+	.long	0x0	# data
+	.long	0x0	# name_length
+	.long	.L.env.buf.96	# name
+
+	.long	0xffffffff	# apk_fd
+	.long	0x0	# data_offset
+	.long	0x0	# data_size
+	.long	0x0	# data
+	.long	0x0	# name_length
+	.long	.L.env.buf.97	# name
+
+	.long	0xffffffff	# apk_fd
+	.long	0x0	# data_offset
+	.long	0x0	# data_size
+	.long	0x0	# data
+	.long	0x0	# name_length
+	.long	.L.env.buf.98	# name
+
+	.long	0xffffffff	# apk_fd
+	.long	0x0	# data_offset
+	.long	0x0	# data_size
+	.long	0x0	# data
+	.long	0x0	# name_length
+	.long	.L.env.buf.99	# name
+
+	.long	0xffffffff	# apk_fd
+	.long	0x0	# data_offset
+	.long	0x0	# data_size
+	.long	0x0	# data
+	.long	0x0	# name_length
+	.long	.L.env.buf.100	# name
+
+	.long	0xffffffff	# apk_fd
+	.long	0x0	# data_offset
+	.long	0x0	# data_size
+	.long	0x0	# data
+	.long	0x0	# name_length
+	.long	.L.env.buf.101	# name
+
+	.long	0xffffffff	# apk_fd
+	.long	0x0	# data_offset
+	.long	0x0	# data_size
+	.long	0x0	# data
+	.long	0x0	# name_length
+	.long	.L.env.buf.102	# name
+
+	.long	0xffffffff	# apk_fd
+	.long	0x0	# data_offset
+	.long	0x0	# data_size
+	.long	0x0	# data
+	.long	0x0	# name_length
+	.long	.L.env.buf.103	# name
+
+	.long	0xffffffff	# apk_fd
+	.long	0x0	# data_offset
+	.long	0x0	# data_size
+	.long	0x0	# data
+	.long	0x0	# name_length
+	.long	.L.env.buf.104	# name
+
+	.long	0xffffffff	# apk_fd
+	.long	0x0	# data_offset
+	.long	0x0	# data_size
+	.long	0x0	# data
+	.long	0x0	# name_length
+	.long	.L.env.buf.105	# name
+
+	.long	0xffffffff	# apk_fd
+	.long	0x0	# data_offset
+	.long	0x0	# data_size
+	.long	0x0	# data
+	.long	0x0	# name_length
+	.long	.L.env.buf.106	# name
+
+	.long	0xffffffff	# apk_fd
+	.long	0x0	# data_offset
+	.long	0x0	# data_size
+	.long	0x0	# data
+	.long	0x0	# name_length
+	.long	.L.env.buf.107	# name
+
+	.long	0xffffffff	# apk_fd
+	.long	0x0	# data_offset
+	.long	0x0	# data_size
+	.long	0x0	# data
+	.long	0x0	# name_length
+	.long	.L.env.buf.108	# name
+
+	.long	0xffffffff	# apk_fd
+	.long	0x0	# data_offset
+	.long	0x0	# data_size
+	.long	0x0	# data
+	.long	0x0	# name_length
+	.long	.L.env.buf.109	# name
+
+	.long	0xffffffff	# apk_fd
+	.long	0x0	# data_offset
+	.long	0x0	# data_size
+	.long	0x0	# data
+	.long	0x0	# name_length
+	.long	.L.env.buf.110	# name
+
+	.long	0xffffffff	# apk_fd
+	.long	0x0	# data_offset
+	.long	0x0	# data_size
+	.long	0x0	# data
+	.long	0x0	# name_length
+	.long	.L.env.buf.111	# name
+
+	.size	bundled_assemblies, 2688
 	# Assembly store individual assembly data
 	.type	assembly_store_bundled_assemblies, @object
 	.global	assembly_store_bundled_assemblies
@@ -1077,139 +1330,163 @@ dso_cache:
 	.long	.L.autostr.18	# name: libmonodroid.so
 	.long	0x0	# handle
 
+	.quad	0x2ea572ff	# hash, from name: SkiaSharp.so
+	.byte	0x0	# ignore
+	.zero	3
+	.long	.L.autostr.19	# name: libSkiaSharp.so
+	.long	0x0	# handle
+
 	.quad	0x336c8e2e	# hash, from name: xa-internal-api.so
 	.byte	0x0	# ignore
 	.zero	3
-	.long	.L.autostr.19	# name: libxa-internal-api.so
+	.long	.L.autostr.20	# name: libxa-internal-api.so
 	.long	0x0	# handle
 
 	.quad	0x4d3b9c27	# hash, from name: mono-btls-shared
 	.byte	0x0	# ignore
 	.zero	3
-	.long	.L.autostr.20	# name: libmono-btls-shared.so
+	.long	.L.autostr.21	# name: libmono-btls-shared.so
 	.long	0x0	# handle
 
 	.quad	0x4fff05c3	# hash, from name: mono-native
 	.byte	0x0	# ignore
 	.zero	3
-	.long	.L.autostr.21	# name: libmono-native.so
+	.long	.L.autostr.22	# name: libmono-native.so
 	.long	0x0	# handle
 
 	.quad	0x5a5d38a3	# hash, from name: xamarin-debug-app-helper.so
 	.byte	0x0	# ignore
 	.zero	3
-	.long	.L.autostr.22	# name: libxamarin-debug-app-helper.so
+	.long	.L.autostr.23	# name: libxamarin-debug-app-helper.so
 	.long	0x0	# handle
 
 	.quad	0x6bede289	# hash, from name: mono-profiler-log.so
 	.byte	0x0	# ignore
 	.zero	3
-	.long	.L.autostr.23	# name: libmono-profiler-log.so
+	.long	.L.autostr.24	# name: libmono-profiler-log.so
 	.long	0x0	# handle
 
 	.quad	0x7b8f6fc3	# hash, from name: mono-native.so
 	.byte	0x0	# ignore
 	.zero	3
-	.long	.L.autostr.24	# name: libmono-native.so
+	.long	.L.autostr.25	# name: libmono-native.so
 	.long	0x0	# handle
 
 	.quad	0x84e63f2e	# hash, from name: xamarin-debug-app-helper
 	.byte	0x0	# ignore
 	.zero	3
-	.long	.L.autostr.25	# name: libxamarin-debug-app-helper.so
+	.long	.L.autostr.26	# name: libxamarin-debug-app-helper.so
 	.long	0x0	# handle
 
 	.quad	0x94c7a87b	# hash, from name: libmonosgen-2.0
 	.byte	0x0	# ignore
 	.zero	3
-	.long	.L.autostr.26	# name: libmonosgen-2.0.so
+	.long	.L.autostr.27	# name: libmonosgen-2.0.so
 	.long	0x0	# handle
 
 	.quad	0x96dfaec4	# hash, from name: libmono-native
 	.byte	0x0	# ignore
 	.zero	3
-	.long	.L.autostr.27	# name: libmono-native.so
+	.long	.L.autostr.28	# name: libmono-native.so
 	.long	0x0	# handle
 
 	.quad	0x9e770032	# hash, from name: monosgen-2.0.so
 	.byte	0x0	# ignore
 	.zero	3
-	.long	.L.autostr.28	# name: libmonosgen-2.0.so
+	.long	.L.autostr.29	# name: libmonosgen-2.0.so
 	.long	0x0	# handle
 
 	.quad	0xa97e926a	# hash, from name: libxa-internal-api.so
 	.byte	0x0	# ignore
 	.zero	3
-	.long	.L.autostr.29	# name: libxa-internal-api.so
+	.long	.L.autostr.30	# name: libxa-internal-api.so
 	.long	0x0	# handle
 
 	.quad	0xabce7529	# hash, from name: libmono-profiler-log
 	.byte	0x0	# ignore
 	.zero	3
-	.long	.L.autostr.30	# name: libmono-profiler-log.so
+	.long	.L.autostr.31	# name: libmono-profiler-log.so
+	.long	0x0	# handle
+
+	.quad	0xb541b9f8	# hash, from name: libSkiaSharp
+	.byte	0x0	# ignore
+	.zero	3
+	.long	.L.autostr.32	# name: libSkiaSharp.so
+	.long	0x0	# handle
+
+	.quad	0xb5d05fb7	# hash, from name: libSkiaSharp.so
+	.byte	0x0	# ignore
+	.zero	3
+	.long	.L.autostr.33	# name: libSkiaSharp.so
 	.long	0x0	# handle
 
 	.quad	0xb631a731	# hash, from name: libmono-native.so
 	.byte	0x0	# ignore
 	.zero	3
-	.long	.L.autostr.31	# name: libmono-native.so
+	.long	.L.autostr.34	# name: libmono-native.so
 	.long	0x0	# handle
 
 	.quad	0xc60479f4	# hash, from name: libmono-btls-shared
 	.byte	0x0	# ignore
 	.zero	3
-	.long	.L.autostr.32	# name: libmono-btls-shared.so
+	.long	.L.autostr.35	# name: libmono-btls-shared.so
+	.long	0x0	# handle
+
+	.quad	0xc71a4669	# hash, from name: SkiaSharp
+	.byte	0x0	# ignore
+	.zero	3
+	.long	.L.autostr.36	# name: libSkiaSharp.so
 	.long	0x0	# handle
 
 	.quad	0xcbfba5ef	# hash, from name: libmonodroid.so
 	.byte	0x0	# ignore
 	.zero	3
-	.long	.L.autostr.33	# name: libmonodroid.so
+	.long	.L.autostr.37	# name: libmonodroid.so
 	.long	0x0	# handle
 
 	.quad	0xd4e925c9	# hash, from name: libxa-internal-api
 	.byte	0x0	# ignore
 	.zero	3
-	.long	.L.autostr.34	# name: libxa-internal-api.so
+	.long	.L.autostr.38	# name: libxa-internal-api.so
 	.long	0x0	# handle
 
 	.quad	0xd7487663	# hash, from name: mono-profiler-log
 	.byte	0x0	# ignore
 	.zero	3
-	.long	.L.autostr.35	# name: libmono-profiler-log.so
+	.long	.L.autostr.39	# name: libmono-profiler-log.so
 	.long	0x0	# handle
 
 	.quad	0xd8bef4d7	# hash, from name: libmonodroid
 	.byte	0x0	# ignore
 	.zero	3
-	.long	.L.autostr.36	# name: libmonodroid.so
+	.long	.L.autostr.40	# name: libmonodroid.so
 	.long	0x0	# handle
 
 	.quad	0xdd142f40	# hash, from name: libmono-btls-shared.so
 	.byte	0x0	# ignore
 	.zero	3
-	.long	.L.autostr.37	# name: libmono-btls-shared.so
+	.long	.L.autostr.41	# name: libmono-btls-shared.so
 	.long	0x0	# handle
 
 	.quad	0xe1ed3ce0	# hash, from name: monosgen-2.0
 	.byte	0x0	# ignore
 	.zero	3
-	.long	.L.autostr.38	# name: libmonosgen-2.0.so
+	.long	.L.autostr.42	# name: libmonosgen-2.0.so
 	.long	0x0	# handle
 
 	.quad	0xe25326ee	# hash, from name: mono-btls-shared.so
 	.byte	0x0	# ignore
 	.zero	3
-	.long	.L.autostr.39	# name: libmono-btls-shared.so
+	.long	.L.autostr.43	# name: libmono-btls-shared.so
 	.long	0x0	# handle
 
 	.quad	0xe391d1b5	# hash, from name: libmonosgen-2.0.so
 	.byte	0x0	# ignore
 	.zero	3
-	.long	.L.autostr.40	# name: libmonosgen-2.0.so
+	.long	.L.autostr.44	# name: libmonosgen-2.0.so
 	.long	0x0	# handle
 
-	.size	dso_cache, 560
+	.size	dso_cache, 640
 
 	#
 	# Generated from instance of: Xamarin.Android.Tasks.ApplicationConfig, Xamarin.Android.Build.Tasks, Version=12.3.0.26, Culture=neutral, PublicKeyToken=84e04ff9cfb79065
@@ -1234,12 +1511,12 @@ application_config:
 	.long	0x3	# package_naming_policy
 	.long	0xc	# environment_variable_count
 	.long	0x0	# system_property_count
-	.long	0x59	# number_of_assemblies_in_apk
+	.long	0x70	# number_of_assemblies_in_apk
 	.long	0x3f	# bundled_assembly_name_width
 	.long	0x2	# number_of_assembly_store_files
-	.long	0x1c	# number_of_dso_cache_entries
+	.long	0x20	# number_of_dso_cache_entries
 	.long	0x0	# mono_components_mask
-	.long	.L.autostr.41	# android_package_name
+	.long	.L.autostr.45	# android_package_name
 	.size	application_config, 48
 
 
@@ -1276,7 +1553,7 @@ application_config:
 
 	.type	.L.autostr.6, @object
 .L.autostr.6:
-	.asciz	"d4429f74-a827-42fc-b004-44f81fadb440"
+	.asciz	"bb18b5a5-d366-49a3-9058-43e9790acbe5"
 	.size	.L.autostr.6, 37
 
 	.type	.L.autostr.7, @object
@@ -1341,118 +1618,138 @@ application_config:
 
 	.type	.L.autostr.19, @object
 .L.autostr.19:
-	.asciz	"libxa-internal-api.so"
-	.size	.L.autostr.19, 22
+	.asciz	"libSkiaSharp.so"
+	.size	.L.autostr.19, 16
 
 	.type	.L.autostr.20, @object
 .L.autostr.20:
-	.asciz	"libmono-btls-shared.so"
-	.size	.L.autostr.20, 23
+	.asciz	"libxa-internal-api.so"
+	.size	.L.autostr.20, 22
 
 	.type	.L.autostr.21, @object
 .L.autostr.21:
-	.asciz	"libmono-native.so"
-	.size	.L.autostr.21, 18
+	.asciz	"libmono-btls-shared.so"
+	.size	.L.autostr.21, 23
 
 	.type	.L.autostr.22, @object
 .L.autostr.22:
-	.asciz	"libxamarin-debug-app-helper.so"
-	.size	.L.autostr.22, 31
+	.asciz	"libmono-native.so"
+	.size	.L.autostr.22, 18
 
 	.type	.L.autostr.23, @object
 .L.autostr.23:
-	.asciz	"libmono-profiler-log.so"
-	.size	.L.autostr.23, 24
+	.asciz	"libxamarin-debug-app-helper.so"
+	.size	.L.autostr.23, 31
 
 	.type	.L.autostr.24, @object
 .L.autostr.24:
-	.asciz	"libmono-native.so"
-	.size	.L.autostr.24, 18
+	.asciz	"libmono-profiler-log.so"
+	.size	.L.autostr.24, 24
 
 	.type	.L.autostr.25, @object
 .L.autostr.25:
-	.asciz	"libxamarin-debug-app-helper.so"
-	.size	.L.autostr.25, 31
+	.asciz	"libmono-native.so"
+	.size	.L.autostr.25, 18
 
 	.type	.L.autostr.26, @object
 .L.autostr.26:
-	.asciz	"libmonosgen-2.0.so"
-	.size	.L.autostr.26, 19
+	.asciz	"libxamarin-debug-app-helper.so"
+	.size	.L.autostr.26, 31
 
 	.type	.L.autostr.27, @object
 .L.autostr.27:
-	.asciz	"libmono-native.so"
-	.size	.L.autostr.27, 18
+	.asciz	"libmonosgen-2.0.so"
+	.size	.L.autostr.27, 19
 
 	.type	.L.autostr.28, @object
 .L.autostr.28:
-	.asciz	"libmonosgen-2.0.so"
-	.size	.L.autostr.28, 19
+	.asciz	"libmono-native.so"
+	.size	.L.autostr.28, 18
 
 	.type	.L.autostr.29, @object
 .L.autostr.29:
-	.asciz	"libxa-internal-api.so"
-	.size	.L.autostr.29, 22
+	.asciz	"libmonosgen-2.0.so"
+	.size	.L.autostr.29, 19
 
 	.type	.L.autostr.30, @object
 .L.autostr.30:
-	.asciz	"libmono-profiler-log.so"
-	.size	.L.autostr.30, 24
+	.asciz	"libxa-internal-api.so"
+	.size	.L.autostr.30, 22
 
 	.type	.L.autostr.31, @object
 .L.autostr.31:
-	.asciz	"libmono-native.so"
-	.size	.L.autostr.31, 18
+	.asciz	"libmono-profiler-log.so"
+	.size	.L.autostr.31, 24
 
 	.type	.L.autostr.32, @object
 .L.autostr.32:
-	.asciz	"libmono-btls-shared.so"
-	.size	.L.autostr.32, 23
+	.asciz	"libSkiaSharp.so"
+	.size	.L.autostr.32, 16
 
 	.type	.L.autostr.33, @object
 .L.autostr.33:
-	.asciz	"libmonodroid.so"
+	.asciz	"libSkiaSharp.so"
 	.size	.L.autostr.33, 16
 
 	.type	.L.autostr.34, @object
 .L.autostr.34:
-	.asciz	"libxa-internal-api.so"
-	.size	.L.autostr.34, 22
+	.asciz	"libmono-native.so"
+	.size	.L.autostr.34, 18
 
 	.type	.L.autostr.35, @object
 .L.autostr.35:
-	.asciz	"libmono-profiler-log.so"
-	.size	.L.autostr.35, 24
+	.asciz	"libmono-btls-shared.so"
+	.size	.L.autostr.35, 23
 
 	.type	.L.autostr.36, @object
 .L.autostr.36:
-	.asciz	"libmonodroid.so"
+	.asciz	"libSkiaSharp.so"
 	.size	.L.autostr.36, 16
 
 	.type	.L.autostr.37, @object
 .L.autostr.37:
-	.asciz	"libmono-btls-shared.so"
-	.size	.L.autostr.37, 23
+	.asciz	"libmonodroid.so"
+	.size	.L.autostr.37, 16
 
 	.type	.L.autostr.38, @object
 .L.autostr.38:
-	.asciz	"libmonosgen-2.0.so"
-	.size	.L.autostr.38, 19
+	.asciz	"libxa-internal-api.so"
+	.size	.L.autostr.38, 22
 
 	.type	.L.autostr.39, @object
 .L.autostr.39:
-	.asciz	"libmono-btls-shared.so"
-	.size	.L.autostr.39, 23
+	.asciz	"libmono-profiler-log.so"
+	.size	.L.autostr.39, 24
 
 	.type	.L.autostr.40, @object
 .L.autostr.40:
-	.asciz	"libmonosgen-2.0.so"
-	.size	.L.autostr.40, 19
+	.asciz	"libmonodroid.so"
+	.size	.L.autostr.40, 16
 
 	.type	.L.autostr.41, @object
 .L.autostr.41:
-	.asciz	"com.companyname.acsapp"
+	.asciz	"libmono-btls-shared.so"
 	.size	.L.autostr.41, 23
+
+	.type	.L.autostr.42, @object
+.L.autostr.42:
+	.asciz	"libmonosgen-2.0.so"
+	.size	.L.autostr.42, 19
+
+	.type	.L.autostr.43, @object
+.L.autostr.43:
+	.asciz	"libmono-btls-shared.so"
+	.size	.L.autostr.43, 23
+
+	.type	.L.autostr.44, @object
+.L.autostr.44:
+	.asciz	"libmonosgen-2.0.so"
+	.size	.L.autostr.44, 19
+
+	.type	.L.autostr.45, @object
+.L.autostr.45:
+	.asciz	"com.companyname.acsapp"
+	.size	.L.autostr.45, 23
 
 
 	.ident	"Xamarin.Android remotes/origin/d17-2 @ bbba5a21f3b649a761b22d83959758b4d30df672"

@@ -26,7 +26,7 @@ namespace ACSApp.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         private async void OnLoginSystem()
         {
-            AuthService auth = new AuthService();
+            HttpServices auth = new HttpServices();
             bool result = await auth.validateToken(LoginToken);
             if (result)
             {

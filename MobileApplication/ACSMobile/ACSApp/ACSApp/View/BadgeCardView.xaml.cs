@@ -19,10 +19,12 @@ namespace ACSApp.View
         public BadgeCardView()
         {
             InitializeComponent();
-            viewModel = new BageCardViewModel(this);
+            imageWave.Source = ImageSource.FromResource("ACSApp.Resources.Images.nonodude.gif");
+
+            viewModel = new BadgeCardViewModel(this);
         }
 
-        BageCardViewModel viewModel { get; set; }
+        BadgeCardViewModel viewModel { get; set; }
         protected override void OnAppearing()
         {
             base.OnAppearing();

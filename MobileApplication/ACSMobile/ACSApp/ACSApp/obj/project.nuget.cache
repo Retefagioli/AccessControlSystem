@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "MovyRSsh+ggJPjF+pNLyqF68c2Aoa885g6tBmpPH6MwJchSDoyT0I1Lt+hoVHULtsy5VlXRP6An7Ykgfl/s8gQ==",
+  "dgSpecHash": "UAcbqe86mzWeiLfJV8lLkx9P6/b/ugOkW2++qCxPe0ciKihYQ/fcQudy9l9Gi0u2sfKVES7486hUQ3lRL916Dw==",
   "success": true,
   "projectFilePath": "C:\\Users\\aless\\source\\repos\\AccessControlSystem\\MobileApplication\\ACSMobile\\ACSApp\\ACSApp\\ACSApp.csproj",
   "expectedPackageFiles": [
@@ -10,8 +10,14 @@
     "C:\\Users\\aless\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\aless\\.nuget\\packages\\plugin.nfc\\0.1.22\\plugin.nfc.0.1.22.nupkg.sha512",
     "C:\\Users\\aless\\.nuget\\packages\\rg.plugins.popup\\2.1.0\\rg.plugins.popup.2.1.0.nupkg.sha512",
+    "C:\\Users\\aless\\.nuget\\packages\\skiasharp\\1.68.0\\skiasharp.1.68.0.nupkg.sha512",
     "C:\\Users\\aless\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\aless\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
+    "C:\\Users\\aless\\.nuget\\packages\\xamarin.ffimageloading\\2.4.11.982\\xamarin.ffimageloading.2.4.11.982.nupkg.sha512",
+    "C:\\Users\\aless\\.nuget\\packages\\xamarin.ffimageloading.forms\\2.4.11.982\\xamarin.ffimageloading.forms.2.4.11.982.nupkg.sha512",
+    "C:\\Users\\aless\\.nuget\\packages\\xamarin.ffimageloading.svg\\2.4.11.982\\xamarin.ffimageloading.svg.2.4.11.982.nupkg.sha512",
+    "C:\\Users\\aless\\.nuget\\packages\\xamarin.ffimageloading.svg.forms\\2.4.11.982\\xamarin.ffimageloading.svg.forms.2.4.11.982.nupkg.sha512",
+    "C:\\Users\\aless\\.nuget\\packages\\xamarin.ffimageloading.transformations\\2.4.11.982\\xamarin.ffimageloading.transformations.2.4.11.982.nupkg.sha512",
     "C:\\Users\\aless\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
   ],
   "logs": []

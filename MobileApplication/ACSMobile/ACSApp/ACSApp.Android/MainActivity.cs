@@ -4,7 +4,7 @@ using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
-
+using FFImageLoading;
 using Plugin.NFC;
 using Android.Content;
 
@@ -18,6 +18,7 @@ namespace ACSApp.Droid
             base.OnCreate(savedInstanceState);
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+            FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true);
             CrossNFC.Init(this);
             RequestedOrientation = ScreenOrientation.Portrait; 
 
