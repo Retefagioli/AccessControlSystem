@@ -46,6 +46,7 @@ Abbiamo deciso di usare queste tecnologie perche’ sono Open Source e fanno par
 - [Premessa](#premessa)
 - [Funzionamento](#funzionamento)
 - [Ngrok](#ngrok)
+
 [Web Application]()
 
 # Database
