@@ -1,6 +1,6 @@
 
 <h3>Database</h3>
-```sh
+```
 dbo
 ├── Tables
 └── StoredProcedures
@@ -68,7 +68,7 @@ CREATE TABLE [dbo].[AccessToken]
 )
 ```
 
-```sh
+```
 Tables
 ├── AccessToken.sql
 ├── Badge.sql
@@ -108,7 +108,7 @@ BEGIN
 END
 ```
 
-```sh
+```
 Stored Procedures
 ├── deleteAccessToken.sql
 ├── deleteBadge.sql
