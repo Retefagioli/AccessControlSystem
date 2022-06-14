@@ -140,6 +140,9 @@ Sulla voce ‘Forwarding’ ci sara’ URL che ci permettera’ di accedere dal 
 
 
 <h3>Database</h3>
+---
+
+![asd](https://github.com/cartaphilvss/AccessControlSystem/blob/main/assets/imgs/db-diagram.png)
 
 ```
 dbo
@@ -149,8 +152,8 @@ dbo
 
 ---
 
-Il campo `GroupId` contenuto nelle tabelle [User]() e [Sensor]() permette di identificare i permessi di accesso degli utenti.
-La tabella [Group]() rappresenta i permessi del sistema.
+Il campo `GroupId` contenuto nelle tabelle [User](https://github.com/cartaphilvss/AccessControlSystem/blob/main/BadgeSystemMinimalAPIApp/BadgeSystemDatabase/dbo/Tables/User.sql) e [Sensor](https://github.com/cartaphilvss/AccessControlSystem/blob/main/BadgeSystemMinimalAPIApp/BadgeSystemDatabase/dbo/Tables/Sensor.sql) permette di identificare i permessi di accesso degli utenti.
+La tabella [Group](https://github.com/cartaphilvss/AccessControlSystem/blob/main/BadgeSystemMinimalAPIApp/BadgeSystemDatabase/dbo/Tables/Group.sql) rappresenta i permessi del sistema.
 ```SQL
 CREATE TABLE [dbo].[Group] (
     [id] INT NOT NULL PRIMARY KEY IDENTITY (1,1),
@@ -179,7 +182,7 @@ CREATE TABLE [dbo].[Sensor]
 
 ```
 
-I campi `UserId` e `NFC_Tag` della tabella [Badge]() consentono di ottenere, tramite le apposite API, i record degli utenti e sensori coinvolti nella comunicazione.
+I campi `UserId` e `NFC_Tag` della tabella [Badge](https://github.com/cartaphilvss/AccessControlSystem/blob/main/BadgeSystemMinimalAPIApp/BadgeSystemDatabase/dbo/Tables/Badge.sql) consentono di ottenere, tramite le apposite API, i record degli utenti e sensori coinvolti nella comunicazione.
 ```SQL
 CREATE TABLE [dbo].[Badge] (
     [id] INT NOT NULL PRIMARY KEY IDENTITY (1,1),
@@ -188,7 +191,7 @@ CREATE TABLE [dbo].[Badge] (
 );
 ```
 
-La tabella [Log]() permette di tenere traccia di tutti gli accessi effettuati nel sistema.
+La tabella [Log](https://github.com/cartaphilvss/AccessControlSystem/blob/main/BadgeSystemMinimalAPIApp/BadgeSystemDatabase/dbo/Tables/Log.sql) permette di tenere traccia di tutti gli accessi effettuati nel sistema.
 ```SQL
 CREATE TABLE [dbo].[Log]
 (
@@ -199,7 +202,7 @@ CREATE TABLE [dbo].[Log]
 )
 ```
 
-La tabella [AccessToken]() contiene il campo `Token` che consente l'accesso all'applicazione mobile.
+La tabella [AccessToken](https://github.com/cartaphilvss/AccessControlSystem/blob/main/BadgeSystemMinimalAPIApp/BadgeSystemDatabase/dbo/Tables/AccessToken.sql) contiene il campo `Token` che consente l'accesso all'applicazione mobile.
 ```SQL
 CREATE TABLE [dbo].[AccessToken]
 (
@@ -221,7 +224,7 @@ Tables
 
 IL database è stato realizzato tramite il BDMS [Microsoft SQL Server](https://docs.microsoft.com/it-it/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16), i [Server Data Tools for Visual Studio](https://docs.microsoft.com/it-it/sql/ssdt/download-sql-server-data-tools-ssdt?view=sql-server-ver16) ed il linguaggio [Transact-SQL](https://docs.microsoft.com/it-it/sql/t-sql/language-reference?view=sql-server-ver16)
 
-Oltre agli script di creazione ed eliminazione del Database e delle Tabelle, rispettivamente [CREATE]() e [DELETE](), vengono implementate le [Stored Procedures]() per le operazioni [CRUD]().
+Oltre agli script di creazione ed eliminazione del Database e delle Tabelle, rispettivamente [CREATE](https://docs.microsoft.com/it-it/sql/t-sql/statements/create-database-transact-sql?view=sql-server-ver16&tabs=sqlpool) e [DELETE](https://docs.microsoft.com/it-it/sql/t-sql/statements/drop-database-transact-sql?view=sql-server-ver16), vengono implementate le [Stored Procedures](https://github.com/cartaphilvss/AccessControlSystem/tree/main/BadgeSystemMinimalAPIApp/BadgeSystemDatabase/dbo/StoredProcedures) per le operazioni [CRUD](https://it.wikipedia.org/wiki/CRUD).
 ```SQL
 # Esempi:
 CREATE PROCEDURE [dbo].[insertUser]
@@ -290,7 +293,7 @@ Stored Procedures
 └── updateUser.sql
 ```
 
-L’interfaccia [ISQLDataAccess](), tramite i metodi [LoadData] e [SavaData], permette di accedere al database.
+L’interfaccia [ISQLDataAccess](https://github.com/cartaphilvss/AccessControlSystem/blob/main/BadgeSystemMinimalAPIApp/DataAccess/DatabaseAccess/ISQLDataAccess.cs), tramite i metodi [LoadData] e [SavaData], permette di accedere al database.
 ```cs
 public class SQLDataAccess : ISQLDataAccess
 {
@@ -316,10 +319,10 @@ I metodi accettano come parametri:
 - `Parametri della Stored Procedure`
 - `ConnectionString al Database`
 
-La comunicazione con il database avviene mediante le [Stored Procedures] che consentono al framework [Draper]() di realizzare metodi per la gestione delle operazione [CRUD].
+La comunicazione con il database avviene mediante le [Stored Procedures] che consentono al framework [Dapper](https://docs.microsoft.com/it-it/azure/azure-sql/database/elastic-scale-working-with-dapper?view=azuresql) di realizzare metodi per la gestione delle operazione [CRUD].
 
-[Tabelle presenti nel database]() vengono rappresentate dai loro singoli [Modelli]().
-I [DataModel]() implementano i metodi: { `get`, `getAll`, `insert`, `update`, `delete` } per le operazioni [CRUD]. Ogni DataModel presenta una propria Interfaccia [IDataModel]() che lavora sul [Model]() ad esso associato.
+[Tabelle presenti nel database](https://github.com/cartaphilvss/AccessControlSystem/tree/main/BadgeSystemMinimalAPIApp/BadgeSystemDatabase/dbo/Tables) vengono rappresentate dai loro singoli [Modelli](https://github.com/cartaphilvss/AccessControlSystem/tree/main/BadgeSystemMinimalAPIApp/DataAccess/Models).
+I [DataModel](https://github.com/cartaphilvss/AccessControlSystem/tree/main/BadgeSystemMinimalAPIApp/DataAccess/Data) implementano i metodi: { `get`, `getAll`, `insert`, `update`, `delete` } per le operazioni [CRUD]. Ogni DataModel presenta una propria Interfaccia [IDataModel](https://github.com/cartaphilvss/AccessControlSystem/tree/main/BadgeSystemMinimalAPIApp/DataAccess/Data) che lavora sul [Model](https://github.com/cartaphilvss/AccessControlSystem/tree/main/BadgeSystemMinimalAPIApp/DataAccess/Data) ad esso associato.
 ```cs
     # Esempio Modello:
     public class UserModel : CreateUserModel
@@ -374,17 +377,18 @@ builder.Services.AddSingleton<IModelData, ModelData>();
 ...
 ```
 # MINIMAL REST APIs
-![Swagger UI]()
+![Swagger](https://github.com/cartaphilvss/AccessControlSystem/blob/main/assets/imgs/swagger-ui-1.PNG)
 
-Realizzazione delle API mediante l'[Open API (Swagger)]()
-Documentazione delle API mediante [Swagger UI]()
+Realizzazione delle API mediante l'[Open API (Swagger)](https://swagger.io/)
+![Swagger UI](https://github.com/cartaphilvss/AccessControlSystem/blob/main/assets/imgs/swagger-ui-api-call.PNG)
+Documentazione delle API mediante [Swagger UI](https://swagger.io/tools/swagger-ui/)
 
-Nel metodo `ConfigureAPI` si specifica il tipo di [Richiesta HTTP](), si associa l’`URL` della richiesta ed il `Metodo di Callback` da eseguire.
+Nel metodo `ConfigureAPI` si specifica il tipo di [Richiesta HTTP](https://it.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Messaggio_di_richiesta), si associa l’`URL` della richiesta ed il `Metodo di Callback` da eseguire.
 ```cs
 app.Method(URL, CallbackMethod);
 ```
 
-Le API vengono gestite nella classe [API]():
+Le API vengono gestite nella classe [API](https://github.com/cartaphilvss/AccessControlSystem/blob/main/BadgeSystemMinimalAPIApp/BadgeSystemMinimalAPI/API.cs):
 ```cs
 private static readonly string _apiBaseUrl = "/api";
 public static void ConfigureAPI(this WebApplication app)
@@ -417,8 +421,3 @@ app.ConfigureAPI();
 
 app.Run();
 ```
-
-
-
-
-
