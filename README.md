@@ -36,6 +36,7 @@ Abbiamo deciso di usare queste tecnologie perche’ sono Open Source e fanno par
 - [Modelli](#modelli)
 
 [Minimal REST APIs](#minimal-rest-apis)
+
 [Mobile Application](#mobile-application)
 - [Pages](#pages)
 - [Near Field Communication (NFC)](#near-field-communication-nfc)
