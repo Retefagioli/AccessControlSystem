@@ -333,7 +333,7 @@ Struttura dell’applicazione mobile:
 ## Pages
 | Invalid Login | Valid Login | Pages |
 |---------------|-------------|-------|
-| ![invalid-login]() | ![valid-login]() | ![pages]()
+| ![invalid-login](https://github.com/cartaphilvss/AccessControlSystem/blob/main/assets/gifs/mobile-invalid-login.gif) | ![valid-login](https://github.com/cartaphilvss/AccessControlSystem/blob/main/assets/gifs/mobile-welcome.gif) | ![pages](https://github.com/cartaphilvss/AccessControlSystem/blob/main/assets/gifs/mobile-all.gif)
 
 
 Ecco cosa fa ciascuna della pagine: 
@@ -486,10 +486,10 @@ L'Applicazione presenta la seguente interfaccia:
 
 ![Retefagioli-Web-App]()
 ## Login
-![Retefagioli-Web-App-login]()
-## Home
-![Retefagioli-Web-App-home]()
+![Retefagioli-Web-App-login](https://github.com/cartaphilvss/AccessControlSystem/blob/main/assets/gifs/login.done-gif.gif)
 ## User
-![Retefagioli-Web-App-users]()
+![Retefagioli-Web-App-users](https://github.com/cartaphilvss/AccessControlSystem/blob/main/assets/gifs/users-gif.gif)
+## Modifica
+![Retefagioli-Web-App-modify-users](https://github.com/cartaphilvss/AccessControlSystem/blob/main/assets/gifs/modify-users-gif.gif)
 ## Groups & Logs
-![Retefagioli-Web-App-groups-logs]()
+![Retefagioli-Web-App-groups-logs](https://github.com/cartaphilvss/AccessControlSystem/blob/main/assets/gifs/all-gif.gif)
