@@ -1,0 +1,52 @@
+﻿@page "/login"
+@using System.Security.Cryptography
+@using System.Text
+@using Retefagioli.Data
+@inherits ComponentBase
+@inject NavigationManager NavigationManager
+
+@if (Permissions.HasPermission) { NavigationManager.NavigateTo("/"); }
+
+<div class="text-center">
+    <main class="form-signin w-100 m-auto">
+        <form data-bitwarden-watching="1">
+            <img class="mb-4" src="https://cdn.discordapp.com/attachments/784025583347695637/943552705702531072/retefagiolirevisitedultra.png" alt="" width="350" height="70">
+            <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+            <div class="form-floating">
+                <input type="text" class="form-control" id="floatingInput" placeholder="username" @bind="Username">
+                <label for="floatingInput">Username</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" @bind="Password">
+                <label for="floatingPassword">Password</label>
+            </div>
+
+            <button class="w-100 btn btn-lg btn-primary" type="submit" @onclick=ValidateAndLog>Log in</button>
+            <p class="mt-5 mb-3 text-muted">©2017–2022 <a href="#">Datain</a></p>
+        </form>
+    </main>
+</div>
+
+@code {
+    private string? Username { get; set; } = "";
+    private string? Password { get; set; } = "";
+    private readonly string PermissionUsername = "asd";
+    private readonly string PermissionPassword = "asd";
+
+    private void Validate()
+    {
+        if (Username != "" && Password != "") {
+            Permissions.HasPermission = Username == PermissionUsername && Password == PermissionPassword;
+        }
+    }
+
+    private void ValidateAndLog()
+    {
+        Validate();
+        if (Permissions.HasPermission)
+        {
+            NavigationManager.NavigateTo("/");
+        }
+    }
+}

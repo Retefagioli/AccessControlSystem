@@ -1,0 +1,192 @@
+﻿@page "/users/modify"
+@page "/users/modify/{Id}"
+
+@using System.Text.Json.Serialization
+@using Microsoft.AspNetCore.Mvc
+@using Newtonsoft.Json
+@using System.Net.Http.Headers
+@using System.Text
+@using System.Text.Json
+@using Retefagioli.Models
+@using Retefagioli.Data
+@inherits ComponentBase
+@inject NavigationManager NavigationManager
+
+@if (!Permissions.HasPermission)
+{
+    NavigationManager.NavigateTo("/login");
+}
+
+@if (changedUser == null)
+{
+    <p>In caricamento...</p>
+} else
+{
+
+    <form>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="nome">Name</label>
+                <input type="text" class="form-control" id="nome" @bind-value="@changedUser.Name" oninput="@changedUser.Name">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="surname">Surname</label>
+                <input type="text" class="form-control" id="surname" @bind-value="@changedUser.Surname" oninput="@changedUser.Surname">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" @bind-value="@changedUser.Email" oninput="@changedUser.Email">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="phone">Phone</label>
+                <input type="text" class="form-control" id="phone" @bind-value="@changedUser.Phone" oninput="@changedUser.Phone">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="gender">Gender</label>
+                <input type="text" class="form-control" id="gender" @bind-value="@changedUser.Gender" oninput="@changedUser.Gender">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="group">Group</label>
+                <input type="text" class="form-control" id="group" @bind-value="@Group" oninput="@GroupNames[int.Parse(Id)]">
+            </div>
+            <a class="btn btn-primary" href="/users" @onclick="() => change()">Aggiorna</a>
+        </div>
+    </form>   
+}
+
+@code {
+
+    [Parameter]
+    public string? Id { get; set; }
+    public string? Group { get; set; }
+
+    public bool modified = false;
+    public List<GroupModel>? Groups { get; set; } = new();
+    static public Dictionary<int, string> GroupNames = new Dictionary<int, string>();
+    UserModel? changedUser = null;
+
+    static readonly string apiPathUser = "https://datain-stage.azurewebsites.net/api/users";
+    static readonly string apiPathGroups = "https://datain-stage.azurewebsites.net/api/groups";
+
+    public static void ShowUser(UserModel User)
+    {
+        Console.WriteLine($"{User.Id} - {User.Name} - {User.Surname} - {User.Email} - {GroupNames[User.GroupId]}");
+    }
+
+    static async Task<UserModel?> GetUserAsync(string id)
+    {
+        HttpClient client = new HttpClient();
+        HttpResponseMessage response = await client.GetAsync(apiPathUser + "/" + id);
+        UserModel? root = null;
+
+        if (response.IsSuccessStatusCode)
+        {
+            string jsonString = await response.Content.ReadAsStringAsync();
+            root = JsonConvert.DeserializeObject<UserModel>(jsonString);
+        }
+
+        return root;
+    }
+
+    static async Task<GroupRoot?> GetGroupAsync()
+    {
+        HttpClient client = new HttpClient();
+        HttpResponseMessage response = await client.GetAsync(apiPathGroups);
+        GroupRoot? root = null;
+
+        if (response.IsSuccessStatusCode)
+        {
+            string jsonString = await response.Content.ReadAsStringAsync();
+            root = JsonConvert.DeserializeObject<GroupRoot>(jsonString);
+        }
+
+        return root;
+    }
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        GroupRoot? rootGroup = await GetGroupAsync();
+        if (rootGroup == null) return;
+        Groups = rootGroup.Value;
+
+        foreach (var _Group in Groups) {
+            Console.WriteLine("RIP BOZO ");
+            Console.WriteLine(_Group.Name + " " + _Group.Id);
+            if (!GroupNames.ContainsKey(_Group.Id))
+            {
+                GroupNames.Add(_Group.Id, _Group.Name != null ? _Group.Name : "Default");
+            }
+
+        }
+
+        UserModel? rootUser;
+        if (Id == null)
+        {
+            rootUser = new(1, "Default", "Default", "Default", "Default", "Default", 1);
+        }
+        else
+        {
+            rootUser = await GetUserAsync(Id);
+            rootUser.Id = int.Parse(Id);
+        }
+
+        if (rootUser != null)
+        {
+            changedUser = rootUser;
+        }
+
+        if (rootGroup != null) Groups = rootGroup.Value;
+    }
+
+    public async Task Put(UserModel user) 
+    {
+        // apiPathUser = "https://datain-stage.azurewebsites.net/api/users";   
+        var jsonSerializerOptions = new JsonSerializerOptions() { PropertyNameCaseInsensitive = true };
+        using (var client = new HttpClient()) 
+        {
+            var response = await client.PutAsJsonAsync(apiPathUser, changedUser);
+            ShowUser(changedUser);
+            Console.WriteLine(response.Content.ToString());
+        }
+
+
+    }
+
+
+    public async void change()
+    {
+        if (changedUser != null)  {
+            var index = GroupNames.FirstOrDefault(x => x.Value == Group).Key;
+            changedUser.Id = int.Parse(Id);
+            changedUser.GroupId = index;
+
+            ShowUser(changedUser);
+            await Put(changedUser);
+        }
+    }
+
+    public class UserRoot
+    {
+        [JsonPropertyName("value")]
+        public List<UserModel>? Value;
+
+        [JsonPropertyName("statusCode")]
+        public int StatusCode;
+
+        [JsonPropertyName("contentType")]
+        public object? ContentType;
+    }
+
+    public class GroupRoot
+    {
+        [JsonPropertyName("value")]
+        public List<GroupModel>? Value;
+
+        [JsonPropertyName("statusCode")]
+        public int StatusCode;
+
+        [JsonPropertyName("contentType")]
+        public object? ContentType;
+    }
+}

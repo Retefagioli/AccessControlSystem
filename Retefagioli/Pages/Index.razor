@@ -1,0 +1,14 @@
+﻿@page "/"
+
+@using Retefagioli.Data
+@inject NavigationManager NavigationManager
+
+@if (!Permissions.HasPermission)
+{
+    NavigationManager.NavigateTo("/login");
+}
+
+<PageTitle>ReteFagioli</PageTitle>
+
+<h1>Retefagioli</h1>
+<SurveyPrompt Title="Piattaforma Gestione Servizio" />

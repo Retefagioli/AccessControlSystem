@@ -1,0 +1,86 @@
+﻿@page "/logs"
+@using System.Text.Json.Serialization
+@using Newtonsoft.Json
+@using Retefagioli.Models
+@using Retefagioli.Data
+@inherits ComponentBase
+@inject NavigationManager NavigationManager
+
+@if (!Permissions.HasPermission)
+{
+    NavigationManager.NavigateTo("/login");
+}
+
+
+<table class="table align-middle mb-0 bg-white">
+    <tbody>
+        @if (Logs == null || !Logs.Any())
+        {
+            <tr><td><div class="d-flex align-items-center"><p class="fw-bold mb-1">In caricamento...</p></div></td></tr>
+        }
+        else
+        {
+            @foreach (LogModel log in Logs)
+            {
+                <tr>
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <img src="https://mdbootstrap.com/img/new/avatars/8.jpg"
+                         alt="user-profile"
+                         style="width: 45px; height: 45px"
+                         class="rounded-circle" />
+                            <div class="ms-3">
+                                <p class="fw-bold mb-1">ID: @log.Id</p>
+                                <p class="text-muted mb-0">USER: @log.UserId</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td><p class="fw-normal mb-1">SENSOR: @log.SensorId</p></td>
+                    <td><p class="fw-normal mb-1">DATE: @log.DateTime</p></td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+
+@code {
+    public List<LogModel>? Logs { get; set; } = new();
+
+
+    static readonly string apiPathLogs= "https://datain-stage.azurewebsites.net/api/logs";
+
+    static async Task<LogRoot?> GetLogsAsync()
+    {
+        HttpClient client = new HttpClient();
+        HttpResponseMessage response = await client.GetAsync(apiPathLogs);
+        LogRoot? root = null;
+
+        if (response.IsSuccessStatusCode)
+        {
+            string jsonString = await response.Content.ReadAsStringAsync();
+            root = JsonConvert.DeserializeObject<LogRoot?>(jsonString);
+        }
+
+        return root;
+    }
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        LogRoot? rootLog = await GetLogsAsync();
+        if (rootLog != null) Logs = rootLog.Value;
+    }
+
+    public class LogRoot
+    {
+        [JsonPropertyName("value")]
+        public List<LogModel>? Value;
+
+        [JsonPropertyName("statusCode")]
+        public int StatusCode;
+
+        [JsonPropertyName("contentType")]
+        public object? ContentType;
+    }
+}

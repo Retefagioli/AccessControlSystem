@@ -1,0 +1,96 @@
+﻿@page "/groups"
+@using System.Text.Json.Serialization
+@using Newtonsoft.Json
+@using Retefagioli.Models
+@using Retefagioli.Data
+@inherits ComponentBase
+@inject NavigationManager NavigationManager
+
+@if (!Permissions.HasPermission)
+{
+    NavigationManager.NavigateTo("/login");
+}
+
+<h3>GroupList</h3>
+
+<table class="table align-middle mb-0 bg-white">
+    <tbody>
+        @if (Groups == null || !Groups.Any())
+        {
+            <tr><td><div class="d-flex align-items-center"><p class="fw-bold mb-1">In caricamento...</p></div></td></tr>
+        }
+        else
+        {
+            @foreach (GroupModel group in Groups)
+            {
+                <tr>
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <img src="https://mdbootstrap.com/img/new/avatars/8.jpg"
+                         alt="user-profile"
+                         style="width: 45px; height: 45px"
+                         class="rounded-circle" />
+                            <div class="ms-3">
+                                <p class="fw-bold mb-1">@group.Name</p>
+                                <p class="text-muted mb-0">@group.Id</p>
+
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-link btn-sm btn-rounded">
+                            <a href="@String.Concat(modifyGroup, group.Id.ToString())">Modifica</a>
+                        </button>
+                    </td>
+                </tr>
+                
+            }
+        }
+    </tbody>
+</table>
+
+
+@code {
+    public List<GroupModel>? Groups { get; set; } = new();
+
+    static readonly string apiPathGroups = "https://datain-stage.azurewebsites.net/api/groups";
+    static readonly string modifyGroup = "https://localhost:7298/groups/modify/";
+
+    public static void ShowGroup(GroupModel Group)
+    {
+        Console.WriteLine($"{Group.Id} - {Group.Name}");
+    }
+
+    static async Task<GroupRoot?> GetGroupAsync()
+    {
+        HttpClient client = new HttpClient();
+        HttpResponseMessage response = await client.GetAsync(apiPathGroups);
+        GroupRoot? root = null;
+
+        if (response.IsSuccessStatusCode)
+        {
+            string jsonString = await response.Content.ReadAsStringAsync();
+            root = JsonConvert.DeserializeObject<GroupRoot>(jsonString);
+        }
+
+        return root;
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        GroupRoot? rootGroup = await GetGroupAsync();
+        if (rootGroup != null) Groups = rootGroup.Value;
+    }
+
+    public class GroupRoot
+    {
+        [JsonPropertyName("value")]
+        public List<GroupModel>? Value;
+
+        [JsonPropertyName("statusCode")]
+        public int StatusCode;
+
+        [JsonPropertyName("contentType")]
+        public object? ContentType;
+    }
+}

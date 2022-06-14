@@ -1,0 +1,49 @@
+﻿@page "/users/delete"
+@page "/users/delete/{Id}"
+
+@using System.Text.Json.Serialization
+@using Microsoft.AspNetCore.Mvc
+@using Newtonsoft.Json
+@using System.Net.Http.Headers
+@using System.Text
+@using System.Text.Json
+@using Retefagioli.Models
+@using Retefagioli.Data
+@inherits ComponentBase
+@inject NavigationManager NavigationManager
+
+@if (!Permissions.HasPermission)
+{
+    NavigationManager.NavigateTo("/login");
+}
+
+@if (!result)
+{
+    <p>Eliminando...</p>
+} 
+else
+{
+    NavigationManager.NavigateTo("/users");
+}
+
+@code {
+    [Parameter]
+    public string? Id { get; set; }
+    bool result = false;
+    static readonly string apiPathUser = "https://datain-stage.azurewebsites.net/api/users/";
+
+    public async Task Delete(int id)
+    {
+        using (var client = new HttpClient())
+        {
+            var response = await client.DeleteAsync(apiPathUser + id.ToString());
+            response.EnsureSuccessStatusCode();
+            result = response.IsSuccessStatusCode;
+        }
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (Id != null)  await Delete(int.Parse(Id)); }
+    }
+}

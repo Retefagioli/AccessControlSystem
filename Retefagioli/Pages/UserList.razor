@@ -1,0 +1,151 @@
+﻿@page "/users"
+@using System.Text.Json.Serialization
+@using Newtonsoft.Json
+@using Retefagioli.Models
+@using Retefagioli.Data
+@inherits ComponentBase
+@inject NavigationManager NavigationManager
+
+@if (!Permissions.HasPermission)
+{
+    NavigationManager.NavigateTo("/login");
+}
+
+
+<table class="table align-middle mb-0 bg-white">
+    <tbody>
+        @if (Users == null || !Users.Any())
+        {
+            <tr><td><div class="d-flex align-items-center"><p class="fw-bold mb-1">In caricamento...</p></div></td></tr>
+        }
+        else
+        {
+            @foreach (UserModel user in Users)
+            {
+                <tr>
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <img src="https://mdbootstrap.com/img/new/avatars/8.jpg"
+                         alt="user-profile"
+                         style="width: 45px; height: 45px"
+                         class="rounded-circle" />
+                            <div class="ms-3">
+                                <p class="fw-bold mb-1">@user.Name @user.Surname</p>
+                                <p class="text-muted mb-0">@user.Email</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td><p class="fw-normal mb-1">@user.Phone</p></td>
+                    <td><p class="fw-normal mb-1">@user.Gender</p></td>
+                    <td><p class="fw-normal mb-1">@GroupNames[user.GroupId]</p></td>
+                    <td><button type="button" class="btn btn-link btn-sm btn-rounded">
+                        <a href="@String.Concat(modifyUser, user.Id.ToString())">Modifica</a>
+                    </button></td>
+                    <td><button type="button" class="btn btn-link btn-sm btn-rounded">
+                        <a href="@String.Concat(deleteUser, user.Id.ToString())" style="color: red;">Delete</a>
+                    </button></td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+
+@code {
+    public List<UserModel>? Users { get; set; } = new();
+    public List<GroupModel>? Groups { get; set; } = new();
+    static public Dictionary<int, string> GroupNames = new Dictionary<int, string>();
+
+
+    static readonly string modifyUser = "https://localhost:7298/users/modify/";
+    static readonly string deleteUser= "https://localhost:7298/users/delete/";
+    static readonly string apiPathUsers = "https://datain-stage.azurewebsites.net/api/users";
+    static readonly string apiPathGroups = "https://datain-stage.azurewebsites.net/api/groups";
+
+    public static void ShowUser(UserModel User)
+    {
+        Console.WriteLine($"{User.Id} - {User.Name} - {User.Surname} - {User.Email} - {GroupNames[User.GroupId]}");
+    }
+
+    static async Task<UserRoot?> GetUsersAsync()
+    {
+        HttpClient client = new HttpClient();
+        HttpResponseMessage response = await client.GetAsync(apiPathUsers);
+        UserRoot? root = null;
+
+        if (response.IsSuccessStatusCode)
+        {
+            string jsonString = await response.Content.ReadAsStringAsync();
+            root = JsonConvert.DeserializeObject<UserRoot>(jsonString);
+        }
+
+        return root;
+    }
+
+    static async Task<GroupRoot?> GetGroupAsync()
+    {
+        HttpClient client = new HttpClient();
+        HttpResponseMessage response = await client.GetAsync(apiPathGroups);
+        GroupRoot? root = null;
+
+        if (response.IsSuccessStatusCode)
+        {
+            string jsonString = await response.Content.ReadAsStringAsync();
+            root = JsonConvert.DeserializeObject<GroupRoot>(jsonString);
+        }
+
+        return root;
+    }
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        UserRoot? rootUser = await GetUsersAsync();
+        GroupRoot? rootGroup = await GetGroupAsync();
+
+        if (rootUser != null) Users = rootUser.Value;
+        if (rootGroup != null) Groups = rootGroup.Value;
+
+        if (Groups == null) return;
+        foreach (var Group in Groups) {
+            if (!GroupNames.ContainsKey(Group.Id))
+            {
+                GroupNames.Add(Group.Id, Group.Name != null ? Group.Name : "Default");
+            } 
+        }
+    }
+
+    public async Task Delete(int id) 
+    {
+        using (var client = new HttpClient()) 
+        {
+            var response = await client.DeleteAsync(apiPathUsers + id);            
+        }
+
+    }
+
+
+    public class UserRoot
+    {
+        [JsonPropertyName("value")]
+        public List<UserModel>? Value;
+
+        [JsonPropertyName("statusCode")]
+        public int StatusCode;
+
+        [JsonPropertyName("contentType")]
+        public object? ContentType;
+    }
+
+    public class GroupRoot
+    {
+        [JsonPropertyName("value")]
+        public List<GroupModel>? Value;
+
+        [JsonPropertyName("statusCode")]
+        public int StatusCode;
+
+        [JsonPropertyName("contentType")]
+        public object? ContentType;
+    }
+}

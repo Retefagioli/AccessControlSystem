@@ -1,0 +1,88 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Retefagioli
+build_property.RootNamespace = Retefagioli
+build_property.ProjectDir = C:\Users\okhasj\Desktop\Retefagioli\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\okhasj\Desktop\Retefagioli
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/okhasj/Desktop/Retefagioli/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/okhasj/Desktop/Retefagioli/Pages/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/okhasj/Desktop/Retefagioli/Pages/DeleteUser.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGVsZXRlVXNlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/okhasj/Desktop/Retefagioli/Pages/FetchData.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/okhasj/Desktop/Retefagioli/Pages/GroupList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR3JvdXBMaXN0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/okhasj/Desktop/Retefagioli/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/okhasj/Desktop/Retefagioli/Pages/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/okhasj/Desktop/Retefagioli/Pages/LogsList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9nc0xpc3QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/okhasj/Desktop/Retefagioli/Pages/ModifyGroup.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW9kaWZ5R3JvdXAucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/okhasj/Desktop/Retefagioli/Pages/ModifyUser.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW9kaWZ5VXNlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/okhasj/Desktop/Retefagioli/Pages/UserList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlckxpc3QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/okhasj/Desktop/Retefagioli/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/okhasj/Desktop/Retefagioli/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/okhasj/Desktop/Retefagioli/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-7fskojrjfz
+
+[C:/Users/okhasj/Desktop/Retefagioli/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-x3ho7g2n0b
+
+[C:/Users/okhasj/Desktop/Retefagioli/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/okhasj/Desktop/Retefagioli/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/okhasj/Desktop/Retefagioli/Pages/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
