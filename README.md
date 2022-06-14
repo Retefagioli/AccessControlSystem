@@ -1,5 +1,5 @@
 # Access Control System
-Un Access Control System e’ un sistema di sicurezza elettronico che limita l’accesso a luoghi fisici soltanto a personale autorizzato. Abbiamo deciso di realizzare questo progetto perche’ permette di risolvere i problemi legati all’uso di chiavi fisiche, quali:
+Un Access Control System e’ un sistema di sicurezza elettronico che limita l’accesso a luoghi fisici soltanto a personale autorizzato. Abbiamo deciso di realizzare questo progetto perche’ permette di risolvere i problemi legati all’uso di sistemi di accesso meccanici (serrature e chiavi), quali:
 - Perdere le chiavi
 - Non sapere chi e quando qualcuno e’ entrato
 - Maggiore difficoltà gestionale
