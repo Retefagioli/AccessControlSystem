@@ -1,0 +1,8 @@
+﻿CREATE PROCEDURE [dbo].[deleteLog]
+	@Id INT
+AS
+BEGIN
+	SET NOCOUNT ON;
+	DELETE FROM [Log]
+	WHERE [id] = @Id;
+END

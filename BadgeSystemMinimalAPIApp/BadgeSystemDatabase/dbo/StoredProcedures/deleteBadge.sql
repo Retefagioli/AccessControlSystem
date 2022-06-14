@@ -1,0 +1,8 @@
+﻿CREATE PROCEDURE [dbo].[deleteBadge]
+	@Id INT
+AS
+BEGIN
+	SET NOCOUNT ON;
+	DELETE FROM [Badge]
+	WHERE [id] = @Id;
+END

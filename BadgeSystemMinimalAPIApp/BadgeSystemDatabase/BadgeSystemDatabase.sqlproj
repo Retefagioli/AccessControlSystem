@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>BadgeSystemDatabase</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{77ec22a8-3f7b-4e0e-bed5-218164b02937}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>BadgeSystemDatabase</RootNamespace>
+    <AssemblyName>BadgeSystemDatabase</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo" />
+    <Folder Include="dbo\Tables" />
+    <Folder Include="dbo\StoredProcedures" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\StoredProcedures\deleteBadge.sql" />
+    <Build Include="dbo\StoredProcedures\deleteGroup.sql" />
+    <Build Include="dbo\StoredProcedures\deleteLog.sql" />
+    <Build Include="dbo\StoredProcedures\deleteSensor.sql" />
+    <Build Include="dbo\StoredProcedures\deleteUser.sql" />
+    <Build Include="dbo\StoredProcedures\getBadgeById.sql" />
+    <Build Include="dbo\StoredProcedures\getBadgeByNFCTag.sql" />
+    <Build Include="dbo\StoredProcedures\getBadges.sql" />
+    <Build Include="dbo\StoredProcedures\getGroupById.sql" />
+    <Build Include="dbo\StoredProcedures\getGroups.sql" />
+    <Build Include="dbo\StoredProcedures\getLogById.sql" />
+    <Build Include="dbo\StoredProcedures\getLogs.sql" />
+    <Build Include="dbo\StoredProcedures\getLogsByDateTime.sql" />
+    <Build Include="dbo\StoredProcedures\getLogsBySensorId.sql" />
+    <Build Include="dbo\StoredProcedures\getLogsByUserId.sql" />
+    <Build Include="dbo\StoredProcedures\getSensorById.sql" />
+    <Build Include="dbo\StoredProcedures\getSensors.sql" />
+    <Build Include="dbo\StoredProcedures\getUserById.sql" />
+    <Build Include="dbo\StoredProcedures\getUsers.sql" />
+    <Build Include="dbo\StoredProcedures\insertBadge.sql" />
+    <Build Include="dbo\StoredProcedures\insertGroup.sql" />
+    <Build Include="dbo\StoredProcedures\insertLog.sql" />
+    <Build Include="dbo\StoredProcedures\insertSensor.sql" />
+    <Build Include="dbo\StoredProcedures\insertUser.sql" />
+    <Build Include="dbo\StoredProcedures\updateBadge.sql" />
+    <Build Include="dbo\StoredProcedures\updateGroup.sql" />
+    <Build Include="dbo\StoredProcedures\updateLog.sql" />
+    <Build Include="dbo\StoredProcedures\updateSensor.sql" />
+    <Build Include="dbo\StoredProcedures\updateUser.sql" />
+    <Build Include="dbo\Tables\Badge.sql" />
+    <Build Include="dbo\Tables\Group.sql" />
+    <Build Include="dbo\Tables\Log.sql" />
+    <Build Include="dbo\Tables\Sensor.sql" />
+    <Build Include="dbo\Tables\User.sql" />
+    <Build Include="dbo\StoredProcedures\getGroupByName.sql" />
+    <Build Include="dbo\Tables\AccessToken.sql" />
+    <Build Include="dbo\StoredProcedures\getAccessTokenById.sql" />
+    <Build Include="dbo\StoredProcedures\getAccessTokens.sql" />
+    <Build Include="dbo\StoredProcedures\getAccessTokenByToken.sql" />
+    <Build Include="dbo\StoredProcedures\insertAccessToken.sql" />
+    <Build Include="dbo\StoredProcedures\updateAccessToken.sql" />
+    <Build Include="dbo\StoredProcedures\deleteAccessToken.sql" />
+    <Build Include="dbo\StoredProcedures\getSensorByNFCTag.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Script.PostDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BadgeSystemDatabase.publish.xml" />
+  </ItemGroup>
+</Project>

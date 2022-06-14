@@ -1,0 +1,8 @@
+﻿CREATE PROCEDURE [dbo].[deleteGroup]
+	@Id INT
+AS
+BEGIN
+	SET NOCOUNT ON;
+	DELETE FROM [Group]
+	WHERE [id] = @Id;
+END

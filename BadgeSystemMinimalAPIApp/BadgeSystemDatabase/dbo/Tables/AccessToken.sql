@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[AccessToken]
+(
+	[id] INT NOT NULL PRIMARY KEY IDENTITY (1,1),
+	[token] NVARCHAR (MAX) NOT NULL,
+	[userId] INT NOT NULL
+)
