@@ -139,7 +139,7 @@ Sulla voce ‘Forwarding’ ci sara’ URL che ci permettera’ di accedere dal 
 
 
 
-<h3>Database</h3>
+# Database
 ---
 
 ![asd](https://github.com/cartaphilvss/AccessControlSystem/blob/main/assets/imgs/db-diagram.png)
@@ -152,6 +152,7 @@ dbo
 
 ---
 
+## Tabelle
 Il campo `GroupId` contenuto nelle tabelle [User](https://github.com/cartaphilvss/AccessControlSystem/blob/main/BadgeSystemMinimalAPIApp/BadgeSystemDatabase/dbo/Tables/User.sql) e [Sensor](https://github.com/cartaphilvss/AccessControlSystem/blob/main/BadgeSystemMinimalAPIApp/BadgeSystemDatabase/dbo/Tables/Sensor.sql) permette di identificare i permessi di accesso degli utenti.
 La tabella [Group](https://github.com/cartaphilvss/AccessControlSystem/blob/main/BadgeSystemMinimalAPIApp/BadgeSystemDatabase/dbo/Tables/Group.sql) rappresenta i permessi del sistema.
 ```SQL
@@ -224,6 +225,8 @@ Tables
 
 IL database è stato realizzato tramite il BDMS [Microsoft SQL Server](https://docs.microsoft.com/it-it/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16), i [Server Data Tools for Visual Studio](https://docs.microsoft.com/it-it/sql/ssdt/download-sql-server-data-tools-ssdt?view=sql-server-ver16) ed il linguaggio [Transact-SQL](https://docs.microsoft.com/it-it/sql/t-sql/language-reference?view=sql-server-ver16)
 
+## Stored Procedures
+
 Oltre agli script di creazione ed eliminazione del Database e delle Tabelle, rispettivamente [CREATE](https://docs.microsoft.com/it-it/sql/t-sql/statements/create-database-transact-sql?view=sql-server-ver16&tabs=sqlpool) e [DELETE](https://docs.microsoft.com/it-it/sql/t-sql/statements/drop-database-transact-sql?view=sql-server-ver16), vengono implementate le [Stored Procedures](https://github.com/cartaphilvss/AccessControlSystem/tree/main/BadgeSystemMinimalAPIApp/BadgeSystemDatabase/dbo/StoredProcedures) per le operazioni [CRUD](https://it.wikipedia.org/wiki/CRUD).
 ```SQL
 # Esempi:
@@ -293,6 +296,8 @@ Stored Procedures
 └── updateUser.sql
 ```
 
+## Database Access
+
 L’interfaccia [ISQLDataAccess](https://github.com/cartaphilvss/AccessControlSystem/blob/main/BadgeSystemMinimalAPIApp/DataAccess/DatabaseAccess/ISQLDataAccess.cs), tramite i metodi [LoadData] e [SavaData], permette di accedere al database.
 ```cs
 public class SQLDataAccess : ISQLDataAccess
@@ -320,6 +325,8 @@ I metodi accettano come parametri:
 - `ConnectionString al Database`
 
 La comunicazione con il database avviene mediante le [Stored Procedures] che consentono al framework [Dapper](https://docs.microsoft.com/it-it/azure/azure-sql/database/elastic-scale-working-with-dapper?view=azuresql) di realizzare metodi per la gestione delle operazione [CRUD].
+
+## Modelli
 
 [Tabelle presenti nel database](https://github.com/cartaphilvss/AccessControlSystem/tree/main/BadgeSystemMinimalAPIApp/BadgeSystemDatabase/dbo/Tables) vengono rappresentate dai loro singoli [Modelli](https://github.com/cartaphilvss/AccessControlSystem/tree/main/BadgeSystemMinimalAPIApp/DataAccess/Models).
 I [DataModel](https://github.com/cartaphilvss/AccessControlSystem/tree/main/BadgeSystemMinimalAPIApp/DataAccess/Data) implementano i metodi: { `get`, `getAll`, `insert`, `update`, `delete` } per le operazioni [CRUD]. Ogni DataModel presenta una propria Interfaccia [IDataModel](https://github.com/cartaphilvss/AccessControlSystem/tree/main/BadgeSystemMinimalAPIApp/DataAccess/Data) che lavora sul [Model](https://github.com/cartaphilvss/AccessControlSystem/tree/main/BadgeSystemMinimalAPIApp/DataAccess/Data) ad esso associato.
