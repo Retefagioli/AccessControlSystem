@@ -1,4 +1,10 @@
-# Access Control System
+<h1 align="center">Access Control System</h1>
+
+<p align="center">
+  <img src="https://cdn.discordapp.com/attachments/784025583347695637/943552705702531072/retefagiolirevisitedultra.png" />
+</p>
+
+## Introduction
 Un Access Control System e’ un sistema di sicurezza elettronico che limita l’accesso a luoghi fisici soltanto a personale autorizzato. Abbiamo deciso di realizzare questo progetto perche’ permette di risolvere i problemi legati all’uso di sistemi di accesso meccanici (serrature e chiavi), quali:
 - Perdere le chiavi
 - Non sapere chi e quando qualcuno e’ entrato
@@ -15,6 +21,11 @@ Per implementare il nostro progetto abbiamo usato le seguenti tecnologie:
 - [NodeMCU](https://www.nodemcu.com/index_en.html): e’ una piattaforma hardware Open Source sviluppata specificatamente per l’IoT.
 
 Abbiamo deciso di usare queste tecnologie perche’ sono Open Source e fanno parte dell’ecosistema Microsoft, partner dell’azienda presso cui abbiamo svolto il nostro percorso di PCTO.
+
+## Funzionamento
+<p align="center">
+  <img src="https://github.com/cartaphilvss/AccessControlSystem/blob/main/assets/imgs/how-it-works%20v2.png" />
+</p>
 
 # Indice
 
