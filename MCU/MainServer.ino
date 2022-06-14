@@ -5,8 +5,8 @@
 #include <ESP8266mDNS.h>
 #include <ArduinoJson.h>
 
-const char* ssid = "PCTO";
-const char* password = "BYLedvbau69egFA";
+const char* ssid = "IlNomeDellaTuaRete";
+const char* password = "LaPasswordDellaRete";
 
 #define ACCESS_GREEN 12
 #define ACCESS_RED 2
