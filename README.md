@@ -130,7 +130,7 @@ Tables
 └── User.sql
 ```
 
-IL database è stato realizzato tramite il BDMS [Microsoft SQL Server](https://docs.microsoft.com/it-it/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16), i [Server Data Tools for Visual Studio](https://docs.microsoft.com/it-it/sql/ssdt/download-sql-server-data-tools-ssdt?view=sql-server-ver16) ed il linguaggio [Transact-SQL](https://docs.microsoft.com/it-it/sql/t-sql/language-reference?view=sql-server-ver16)
+Il database è stato realizzato tramite il DBMS [Microsoft SQL Server](https://docs.microsoft.com/it-it/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16), i [Server Data Tools for Visual Studio](https://docs.microsoft.com/it-it/sql/ssdt/download-sql-server-data-tools-ssdt?view=sql-server-ver16) ed il linguaggio [Transact-SQL](https://docs.microsoft.com/it-it/sql/t-sql/language-reference?view=sql-server-ver16)
 
 ## Stored Procedures
 
