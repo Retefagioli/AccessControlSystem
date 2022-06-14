@@ -1,4 +1,6 @@
 # Mobile Application
+L’applicazione e’ stata realizzata con [Xamarin](https://docs.microsoft.com/it-it/xamarin/), una piattaforma Open Source per la compilazioni di applicazioni cross-platform. L’UI e’ stata fatta invece con [Xamarin.Forms](https://docs.microsoft.com/it-it/xamarin/xamarin-forms/) un framework Open Source cross-platform. Per realizzare il codice dell’applicazione ho usato un pattern software architetturale [Model-View-ViewModel](https://it.wikipedia.org/wiki/Model-view-viewmodel) che permette di separare i Data Models, dalla Business Logic e dalla User Interface.
+
 Struttura dell’applicazione mobile:
 
 ![image.png](https://github.com/cartaphilvss/AccessControlSystem/blob/main/assets/imgs/MobileApplicationStructure.drawio.png)
@@ -6,52 +8,54 @@ Struttura dell’applicazione mobile:
 ## Le pagine
 
 Ciascuna delle pagine ha un ViewModel associato che si occupa di tutta la logica di funzionamento. Ecco cosa fa ciascuna della pagine: 
-- Main Page: definisce il layout/struttura di tutta l’applicazione e carica la Loading Page prima di tutte le altre.
-- Loading Page: verifica che l’utente sia gia’ loggato grazie alla classe ausiliaria ```Settings Controller``` che utilizza al proprio interno la classe `Preferences` del plugin [Xamarin.Essentials](https://docs.microsoft.com/it-it/xamarin/essentials/?context=xamarin%2Fandroid) per mantenere persistenti le preferenze/impostazioni dell'utente. La funzione che si occupa di verificare lo stato del login e’ `Init()`:
-```
-public async Task Init()
-        {
+- **Main Page**: definisce il layout/struttura di tutta l’applicazione e carica la Loading Page prima di tutte le altre.
+- **Loading Page**: verifica che l’utente sia gia’ loggato grazie alla classe ausiliaria ```Settings Controller``` che utilizza al proprio interno la classe `Preferences` del plugin [Xamarin.Essentials](https://docs.microsoft.com/it-it/xamarin/essentials/?context=xamarin%2Fandroid) per mantenere persistenti le preferenze/impostazioni dell'utente. La funzione che si occupa di verificare lo stato del login e’ `Init()`:
 
-            // Per via di un bug che chiama due volte la funzione OnAppearing nel LoadingPage.xaml e' stata aggiunta una variabile count
-            // che si occupa di verificare che la funzione non venga chiamata piu' di due volte.
-            if (cnt++ != 0) return;
+```c#
+public async Task Init()
+{
+
+	// Per via di un bug che chiama due volte la funzione OnAppearing nel LoadingPage.xaml e' stata aggiunta una variabile count
+        // che si occupa di verificare che la funzione non venga chiamata piu' di due volte.
+        if (cnt++ != 0) return;
             
             
-            // Grazie alle classe ausiliaria SettingsController verifichiamo se l'utente e' gia' loggato
-            // La funzione Shell.Current.GoToAsync() ci permette di muoverci tra le pagine definite nel MainPage.xaml
-            if (SettingsController.isAutenticated() == "True")
-            {
+         // Grazie alle classe ausiliaria SettingsController verifichiamo se l'utente e' gia' loggato
+         // La funzione Shell.Current.GoToAsync() ci permette di muoverci tra le pagine definite nel MainPage.xaml
+         if (SettingsController.isAutenticated() == "True")
+         {
                 await Shell.Current.GoToAsync("///main");
                 
-            }else
-            {
+         }
+	 else
+         {
                 await Shell.Current.GoToAsync("///login");
-            }
-        }
+         }
+}
 ```
-- Login Page: permette all’utente di loggare tramite un Token fornito dall'amministratore del sistema. Il Token viene inviato tramite un GET request all’API `/api/AccessToken/Token/{token}`  che ritorna niente nel caso il Token non sia presente nel DB, altrimenti ritorna il TokenModel che contiene il Token. Nel caso di esito positivo l’utente verra’ spostato in `Main Page Content` e verranno prese le informazioni dell’utente dalla Web Application a partire dallo userId contenuto nel TokenModel. Se l’esito e’ negativo verra’ mostrato un messaggio di errore nella pagina di login.
-```
+- **Login Page**: permette all’utente di loggare tramite un Token fornito dall'amministratore del sistema. Il Token viene inviato tramite un GET request all’API `/api/AccessToken/Token/{token}`  che ritorna niente nel caso il Token non sia presente nel DB, altrimenti ritorna il TokenModel che contiene il Token. Nel caso di esito positivo l’utente verra’ spostato in `Main Page Content` e verranno prese le informazioni dell’utente dalla Web Application a partire dallo userId contenuto nel TokenModel. Se l’esito e’ negativo verra’ mostrato un messaggio di errore nella pagina di login.
+```c#
 private async void OnLoginSystem()
-        {
-            HttpServices auth = new HttpServices();
-            bool result = await auth.validateToken(LoginToken);
-            if (result)
-            {
-                Debug.WriteLine("Autentication is completed", "Autentication System");
-                SettingsController.setAutentication();
-                await Shell.Current.GoToAsync("///main");
-            }
-            else {
-                ErrorMessage = "Password non corretta";
-                Debug.WriteLine($"La password e' sbagliata", "Autentication System");
-                LoginToken = "";
-            }
-
+{
+	HttpServices auth = new HttpServices();
+	bool result = await auth.validateToken(LoginToken);
+	if (result)
+	{
+		Debug.WriteLine("Autentication is completed", "Autentication System");
+		SettingsController.setAutentication();
+        	await Shell.Current.GoToAsync("///main");
         }
+        else {
+        	ErrorMessage = "Password non corretta";
+        	Debug.WriteLine($"La password e' sbagliata", "Autentication System");
+        	LoginToken = "";
+        }
+
+}
 ```
-- Logs Page: mostra una lista di logs dell’utente con le seguenti informazioni: data e nome del sensore.
-- Main Page Content: e’ una welcome page che mostra un messaggio di benvenuto all’utente.
-- Badge Page: gestisce l’interazione con il tag NFC e comunica con la Web Application per verificare l’accesso dell’utente. Piu’ informazione nella sezione successiva.
+- **Logs Page**: mostra una lista di logs dell’utente con le seguenti informazioni: data e nome del sensore.
+- **Main Page**: Content: e’ una welcome page che mostra un messaggio di benvenuto all’utente.
+- **Badge Page**: gestisce l’interazione con il tag NFC e comunica con la Web Application per verificare l’accesso dell’utente. Piu’ informazione nella sezione successiva.
 
 ## Near Field Communication (NFC)
 Il Near Field Communication è una tecnologia di ricetrasmissione che fornisce connettività contactless senza fili bidirezionale a distanza a corto raggio. Viene utilizzata principalmente per i pagamenti contactless e l’autenticazione per servizi di ticketing o controllo di accesso. Le principali modalita’ operative del NFC sono 3:
@@ -59,7 +63,7 @@ Il Near Field Communication è una tecnologia di ricetrasmissione che fornisce c
 - Card Emulation mode
 - Peer-to-Peer mode
 
-La modalita’ che abbiamo usata noi per la realizzazione del sistema di accesso e’ il Reader/Write mode che descrive l’interazione tra un device NFC e un tag passivo NFC. Quando il device NFC, nel nostro caso il telefono dell’utente, entra nel raggio operativo del tag NFC, inizializza una connessione con il tag e avviene uno scambio di comandi NFC con il chip presente all’interno del tag per svolgere operazioni di lettura e scrittura. Lo stato del tag viene ripristinato quando il device NFC esce dal raggio operativo del tag. La Badge Page dell’applicazione si occupa di leggere il tag passivo che contiene l’identificativo associato ad un sensore. Una volta letto l’identificativo vengono inviati due informazioni tramite POST request all’API */api/Badges*: l’ID dell’utente e l’identificativo. L’API elabora la richiesta, invia all’apposito sensore l’esito e crea un log nel database.  L’implementazione della tecnologia Near Field Communication all’interno dell’applicazione e’ stata fatta con il plugin [Plugin.NFC](https://github.com/franckbour/Plugin.NFC) per Xamarin.Forms, scaricabile attraverso il NuGet Package Manager per Visual Studio.
+La modalita’ che abbiamo usata noi per la realizzazione del sistema di accesso e’ il Reader/Write mode che descrive l’interazione tra un device NFC e un tag passivo NFC. Quando il device NFC, nel nostro caso il telefono dell’utente, entra nel raggio operativo del tag NFC, inizializza una connessione con il tag e avviene uno scambio di comandi NFC con il chip presente all’interno del tag per svolgere operazioni di lettura e scrittura. Lo stato del tag viene ripristinato quando il device NFC esce dal raggio operativo del tag. La Badge Page dell’applicazione si occupa di leggere il tag passivo che contiene l’identificativo associato ad un sensore. Una volta letto l’identificativo vengono inviati due informazioni tramite POST request all’API `/api/Badges`: l’ID dell’utente e l’identificativo. L’API elabora la richiesta, invia all’apposito sensore l’esito e crea un log nel database.  L’implementazione della tecnologia Near Field Communication all’interno dell’applicazione e’ stata fatta con il plugin [Plugin.NFC](https://github.com/franckbour/Plugin.NFC) per Xamarin.Forms, scaricabile attraverso il NuGet Package Manager per Visual Studio.
 
 # Sensore 
 Il sensore e’ [NodeMCU ESP8266 ESP12-E Amica v2](https://www.amazon.it/AZDelivery-NodeMCU-esp8266-esp-12e-gratuito/dp/B06Y1LZLLY/ref=sr_1_3?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=4EQXZV5P4QEI&keywords=nodemcu+esp8266+amica+v2&qid=1655200180&s=pc&sprefix=nodemcu+esp8266+amica+v2%2Ccomputers%2C85&sr=1-3) una scheda di sviluppo Open Source utilizzata principalmente per dispositivi IOT. 
@@ -81,8 +85,9 @@ Lo schema circuitale del sensore e’ molto semplice:
 
 ![image.png](https://github.com/cartaphilvss/AccessControlSystem/blob/main/assets/imgs/circuit%20design.png)
 
-Prima di tutto il microcontrollore deve avere accesso alla rete quindi inizializziamo la connessione nella funzione Setup(), la prima funzione chiamata dal microcontrollore al momento dell’accensione. Il codice che inizializza la connessione al Wi-Fi e’ il seguente: 
-```void initWiFi()
+Prima di tutto il microcontrollore deve avere accesso alla rete quindi inizializziamo la connessione nella funzione `Setup()`, la prima funzione chiamata dal microcontrollore al momento dell’accensione. Il codice che inizializza la connessione al Wi-Fi e’ il seguente: 
+```c
+void initWiFi()
 {
   WiFi.mode(WIFI_STA);
   WiFi.begin(ssid, password);
@@ -100,10 +105,12 @@ Prima di tutto il microcontrollore deve avere accesso alla rete quindi inizializ
 
 E’ importante salvare l’indirizzo IP del dispositivo perche’ ci servira’ dopo per poter pubblicare il Web Server su internet.
 I parametri utilizzati in `WiFi.begin()` sono due variabili globali dichiarate precedentemente che contengono SSID del Wi-Fi e
+la password per potersi connettere.
 
-la password per potersi connettere. La funzione principale del microcontrollore e’ quella di Web Server collegato alla porta 8888 con una singola API `/api/access` accessibile tramite una POST request che contiene l’esito dell’accesso elaborato dalla WebApplication. Il codice che gestisce le richieste e’ il seguente: 
+La funzione principale del microcontrollore e’ quella di Web Server collegato alla porta 8888 con una singola API `/api/access` accessibile tramite una POST request che contiene l’esito dell’accesso elaborato dalla WebApplication. Il codice che gestisce le richieste e’ il seguente: 
 
-```void accessDevice()
+```c
+void accessDevice()
 {
     
     String postBody = server.arg("plain");
@@ -125,17 +132,17 @@ Le funzione `accessAllowed()` e `accessDenied()` non fanno che altro che accende
 ## Ngrok
 Il Web Server e’ accessibile soltanto in rete locale, quindi e’ necessario uno strumento che permetta di esporre il nostro server locale su internet, ovvero [ngrok](https://ngrok.com/). Per poter utilizzare ngrok è necessario registrarsi sul loro sito e [scaricare l’applicazione](https://ngrok.com/download). Per prima cosa tramite command-line andremo ad aggiungere l’Authtoken alla configurazione del programmma tramite questo comando: 
 
-```
+```bash
 ngrok config add-authtoken {iltuotoken}
 ``` 
 
 Una volta configurato, bisognera’ soltanto pubblicare il nostro Web Server con questo comando: 
 
-```
+```bash
 ngrok http {indirizzoMicrocontrollore}:{porta}
 ```
 
-Sulla voce ‘Forwarding’ ci sara’ URL che ci permettera’ di accedere dal browser e chiamare l’API dalla WebApplication.
+Sulla voce *Forwarding* ci sara’ URL che ci permettera’ di accedere dal browser e chiamare l’API dalla WebApplication.
 
 
 
