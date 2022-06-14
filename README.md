@@ -140,7 +140,8 @@ Sulla voce ‘Forwarding’ ci sara’ URL che ci permettera’ di accedere dal 
 
 
 # Database
----
+
+
 
 ![asd](https://github.com/cartaphilvss/AccessControlSystem/blob/main/assets/imgs/db-diagram.png)
 
@@ -149,8 +150,6 @@ dbo
 ├── Tables
 └── StoredProcedures
 ```
-
----
 
 ## Tabelle
 Il campo `GroupId` contenuto nelle tabelle [User](https://github.com/cartaphilvss/AccessControlSystem/blob/main/BadgeSystemMinimalAPIApp/BadgeSystemDatabase/dbo/Tables/User.sql) e [Sensor](https://github.com/cartaphilvss/AccessControlSystem/blob/main/BadgeSystemMinimalAPIApp/BadgeSystemDatabase/dbo/Tables/Sensor.sql) permette di identificare i permessi di accesso degli utenti.
