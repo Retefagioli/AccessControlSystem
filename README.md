@@ -1,5 +1,23 @@
+# Access Control System
+Un Access Control System e’ un sistema di sicurezza elettronico che limita l’accesso a luoghi fisici soltanto a personale autorizzato. Abbiamo deciso di realizzare questo progetto perche’ permette di risolvere i problemi legati all’uso di chiavi fisiche, quali:
+- Perdere le chiavi
+- Non sapere chi e quando qualcuno e’ entrato
+- Maggiore difficoltà gestionale
+- Minor sicurezza
+
+### Tecnologie usate
+Per implementare il nostro progetto abbiamo usato le seguenti tecnologie:
+- [ASP.NET Core](https://docs.microsoft.com/it-it/aspnet/core/?view=aspnetcore-6.0): e’ un framework Open Source multipiattaforma realizzato da Microsoft per la realizzazione di app moderne abilitate per il cloud e connesse a Internet.
+- [Dapper](https://dapperlib.github.io/Dapper/): e’ un framework Open Source realizzato da Github che permette di mappare SQL queries a strutture di dati astratte quali le classi in C#.
+- [Blazor Server](https://docs.microsoft.com/it-it/aspnet/core/blazor/?view=aspnetcore-6.0): e’ un framework Web per la creazione di componenti dell’interfaccia utente Web eseguiti lato server in ASP.NET Core.
+- [Xamarin](https://dotnet.microsoft.com/en-us/apps/xamarin): e’ una piattaforma per la realizzazione di app mobile cross-platform Open Source sviluppato da Microsoft.
+- [NodeMCU](https://www.nodemcu.com/index_en.html): e’ una piattaforma hardware Open Source sviluppata specificatamente per l’IoT.
+
+Abbiamo deciso di usare queste tecnologie perche’ sono Open Source e fanno parte dell’ecosistema Microsoft, partner dell’azienda presso cui abbiamo svolto il nostro percorso di PCTO.
+
+
 # Mobile Application
-L’applicazione e’ stata realizzata con [Xamarin](https://docs.microsoft.com/it-it/xamarin/), una piattaforma Open Source per la compilazioni di applicazioni cross-platform. L’UI e’ stata fatta invece con [Xamarin.Forms](https://docs.microsoft.com/it-it/xamarin/xamarin-forms/) un framework Open Source cross-platform. Per realizzare il codice dell’applicazione ho usato un pattern software architetturale [Model-View-ViewModel](https://it.wikipedia.org/wiki/Model-view-viewmodel) che permette di separare i Data Models, dalla Business Logic e dalla User Interface.
+L’applicazione e’ stata realizzata con Xamarin, mentre la interfaccia utente e’ stata realizzata invece con [Xamarin.Forms](https://docs.microsoft.com/it-it/xamarin/xamarin-forms/) un framework Open Source cross-platform che per permette di creare User Interface per mobile. Per realizzare il codice dell’applicazione ho usato un pattern software architetturale [Model-View-ViewModel](https://it.wikipedia.org/wiki/Model-view-viewmodel) che permette di separare i Data Models, dalla Business Logic e dalla User Interface.
 
 Struttura dell’applicazione mobile:
 
