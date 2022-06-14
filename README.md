@@ -231,12 +231,12 @@ I metodi accettano come parametri:
 - `Parametri della Stored Procedure`
 - `ConnectionString al Database`
 
-La comunicazione con il database avviene mediante le [Stored Procedures] che consentono al framework [Dapper](https://docs.microsoft.com/it-it/azure/azure-sql/database/elastic-scale-working-with-dapper?view=azuresql) di realizzare metodi per la gestione delle operazione [CRUD].
+La comunicazione con il database avviene mediante le [Stored Procedures] che consentono al framework [Dapper](https://docs.microsoft.com/it-it/azure/azure-sql/database/elastic-scale-working-with-dapper?view=azuresql) di realizzare metodi per la gestione delle operazione CRUD.
 
 ## Modelli
 
-[Tabelle presenti nel database](https://github.com/cartaphilvss/AccessControlSystem/tree/main/BadgeSystemMinimalAPIApp/BadgeSystemDatabase/dbo/Tables) vengono rappresentate dai loro singoli [Modelli](https://github.com/cartaphilvss/AccessControlSystem/tree/main/BadgeSystemMinimalAPIApp/DataAccess/Models).
-I [DataModel](https://github.com/cartaphilvss/AccessControlSystem/tree/main/BadgeSystemMinimalAPIApp/DataAccess/Data) implementano i metodi: { `get`, `getAll`, `insert`, `update`, `delete` } per le operazioni [CRUD]. Ogni DataModel presenta una propria Interfaccia [IDataModel](https://github.com/cartaphilvss/AccessControlSystem/tree/main/BadgeSystemMinimalAPIApp/DataAccess/Data) che lavora sul [Model](https://github.com/cartaphilvss/AccessControlSystem/tree/main/BadgeSystemMinimalAPIApp/DataAccess/Data) ad esso associato.
+Le [Tabelle presenti nel database](https://github.com/cartaphilvss/AccessControlSystem/tree/main/BadgeSystemMinimalAPIApp/BadgeSystemDatabase/dbo/Tables) vengono rappresentate dai loro singoli [Modelli](https://github.com/cartaphilvss/AccessControlSystem/tree/main/BadgeSystemMinimalAPIApp/DataAccess/Models).
+I [DataModel](https://github.com/cartaphilvss/AccessControlSystem/tree/main/BadgeSystemMinimalAPIApp/DataAccess/Data) implementano i metodi: { `get`, `getAll`, `insert`, `update`, `delete` } per le operazioni CRUD. Ogni DataModel presenta una propria Interfaccia [IDataModel](https://github.com/cartaphilvss/AccessControlSystem/tree/main/BadgeSystemMinimalAPIApp/DataAccess/Data) che lavora sul [Model](https://github.com/cartaphilvss/AccessControlSystem/tree/main/BadgeSystemMinimalAPIApp/DataAccess/Data) ad esso associato.
 ```cs
     # Esempio Modello:
     public class UserModel : CreateUserModel
@@ -375,7 +375,7 @@ public async Task Init()
          }
 }
 ```
-- **Login Page**: permette all’utente di loggare tramite un Token fornito dall'amministratore del sistema. Il Token viene inviato tramite un GET request all’API `/api/AccessToken/Token/{token}`  che ritorna niente nel caso il Token non sia presente nel DB, altrimenti ritorna il TokenModel che contiene il Token. Nel caso di esito positivo l’utente verra’ spostato in `Main Page Content` e verranno prese le informazioni dell’utente dalla Web Application a partire dallo userId contenuto nel TokenModel. Se l’esito e’ negativo verra’ mostrato un messaggio di errore nella pagina di login.
+- **Login Page**: permette all’utente di loggare tramite un Token fornito dall'amministratore del sistema. Il Token viene inviato tramite un GET request all’API `/api/AccessToken/Token/{token}` che nel caso sia presente nel database restituisce il TokenModel, nessun dato restituito altrimenti. Nel caso di esito positivo l’utente verra’ spostato in `Main Page Content` e verranno prese le informazioni dell’utente dalla Web Application a partire dallo userId contenuto nel TokenModel. Se l’esito e’ negativo verra’ mostrato un messaggio di errore nella pagina di login.
 ```c#
 private async void OnLoginSystem()
 {
@@ -408,7 +408,7 @@ Il Near Field Communication è una tecnologia di ricetrasmissione che fornisce c
 La modalita’ che abbiamo usata noi per la realizzazione del sistema di accesso e’ il Reader/Write mode che descrive l’interazione tra un device NFC e un tag passivo NFC. Quando il device NFC, nel nostro caso il telefono dell’utente, entra nel raggio operativo del tag NFC, inizializza una connessione con il tag e avviene uno scambio di comandi NFC con il chip presente all’interno del tag per svolgere operazioni di lettura e scrittura. Lo stato del tag viene ripristinato quando il device NFC esce dal raggio operativo del tag. La Badge Page dell’applicazione si occupa di leggere il tag passivo che contiene l’identificativo associato ad un sensore. Una volta letto l’identificativo vengono inviati due informazioni tramite POST request all’API `/api/Badges`: l’ID dell’utente e l’identificativo. L’API elabora la richiesta, invia all’apposito sensore l’esito e crea un log nel database.  L’implementazione della tecnologia Near Field Communication all’interno dell’applicazione e’ stata fatta con il plugin [Plugin.NFC](https://github.com/franckbour/Plugin.NFC) per Xamarin.Forms, scaricabile attraverso il NuGet Package Manager per Visual Studio.
 
 # Sensore 
-Il sensore e’ [NodeMCU ESP8266 ESP12-E Amica v2](https://www.amazon.it/AZDelivery-NodeMCU-esp8266-esp-12e-gratuito/dp/B06Y1LZLLY/ref=sr_1_3?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=4EQXZV5P4QEI&keywords=nodemcu+esp8266+amica+v2&qid=1655200180&s=pc&sprefix=nodemcu+esp8266+amica+v2%2Ccomputers%2C85&sr=1-3) una scheda di sviluppo Open Source utilizzata principalmente per dispositivi IOT. 
+Il sensore e’ [NodeMCU ESP8266 ESP12-E Amica v2](https://www.amazon.it/AZDelivery-NodeMCU-esp8266-esp-12e-gratuito/dp/B06Y1LZLLY/ref=sr_1_3?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=4EQXZV5P4QEI&keywords=nodemcu+esp8266+amica+v2&qid=1655200180&s=pc&sprefix=nodemcu+esp8266+amica+v2%2Ccomputers%2C85&sr=1-3) una scheda di sviluppo Open Source utilizzata principalmente per dispositivi IoT. 
 Questi sono i pin di uscita della scheda:
 
 ![image.png](https://github.com/cartaphilvss/AccessControlSystem/blob/main/assets/imgs/NodeMCU-ESP8266-Pinout.jpg)
@@ -488,7 +488,7 @@ Sulla voce *Forwarding* ci sara’ URL che ci permettera’ di accedere dal brow
 
 
 # Web Application
-Il Servizio prevede la realizzazioen di una Piattaforma che consente all'Amministratore di visualizzare i dati del servizio (Utenti, Accessi) e di aggiungere e rimuovere elementi quali Utenti e Gruppi.
+Il Servizio prevede la realizzazione di una Piattaforma che consente all'Amministratore di visualizzare i dati del servizio (Utenti, Accessi) e di aggiungere e rimuovere elementi quali Utenti e Gruppi.
 
 L'Applicazione presenta la seguente interfaccia: 
 - Login: Pagina di accesso alla piattaforma 
@@ -497,7 +497,6 @@ L'Applicazione presenta la seguente interfaccia:
 - Groups: Pagina in cui vengono elencati i gruppi a cui gli utenti si possono iscrivere
 - Logs: Pagina in cui vengono visualizzati le informazioni relative agli accessi avvenuti.
 
-![Retefagioli-Web-App]()
 ## Login
 ![Retefagioli-Web-App-login](https://github.com/cartaphilvss/AccessControlSystem/blob/main/assets/gifs/login.done-gif.gif)
 ## User
