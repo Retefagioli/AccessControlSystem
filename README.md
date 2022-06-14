@@ -8,6 +8,7 @@ Un Access Control System e’ un sistema di sicurezza elettronico che limita l�
 ### Tecnologie usate
 Per implementare il nostro progetto abbiamo usato le seguenti tecnologie:
 - [ASP.NET Core](https://docs.microsoft.com/it-it/aspnet/core/?view=aspnetcore-6.0): e’ un framework Open Source multipiattaforma realizzato da Microsoft per la realizzazione di app moderne abilitate per il cloud e connesse a Internet.
+- [MSSQL](https://www.microsoft.com/it-it/sql-server/): e' un sistema per la gestione di basi di dati relazioni prodotto da Microsoft.
 - [Dapper](https://dapperlib.github.io/Dapper/): e’ un framework Open Source realizzato da Github che permette di mappare SQL queries a strutture di dati astratte quali le classi in C#.
 - [Blazor Server](https://docs.microsoft.com/it-it/aspnet/core/blazor/?view=aspnetcore-6.0): e’ un framework Web per la creazione di componenti dell’interfaccia utente Web eseguiti lato server in ASP.NET Core.
 - [Xamarin](https://dotnet.microsoft.com/en-us/apps/xamarin): e’ una piattaforma per la realizzazione di app mobile cross-platform Open Source sviluppato da Microsoft.
