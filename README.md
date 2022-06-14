@@ -1,5 +1,5 @@
-
 <h3>Database</h3>
+
 ```
 dbo
 ├── Tables
@@ -58,7 +58,7 @@ CREATE TABLE [dbo].[Log]
 )
 ```
 
-La tabella [AccessToken]() contiene il campo `Token`, consente l’accesso parametro di accesso dell’applicazione mobile.
+La tabella [AccessToken]() contiene il campo `Token` che consente l'accesso all'applicazione mobile.
 ```SQL
 CREATE TABLE [dbo].[AccessToken]
 (
@@ -149,7 +149,7 @@ Stored Procedures
 └── updateUser.sql
 ```
 
-L’interfaccia [ISQLDataAccess]() tramite i metodi [LoadData] e [SavaData], permette di accedere al database.
+L’interfaccia [ISQLDataAccess](), tramite i metodi [LoadData] e [SavaData], permette di accedere al database.
 ```cs
 public class SQLDataAccess : ISQLDataAccess
 {
