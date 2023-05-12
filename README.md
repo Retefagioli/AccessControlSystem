@@ -24,7 +24,7 @@ Abbiamo deciso di usare queste tecnologie perche’ sono Open Source e fanno par
 
 ## Funzionamento
 <p align="center">
-  <img src="https://github.com/cartaphilvss/AccessControlSystem/blob/main/assets/imgs/how-it-works%20v2.png" />
+  <img src="https://github.com/Exsus-Labs/AccessControlSystem/blob/main/assets/imgs/how-it-works%20v2.png" />
 </p>
 
 # Indice
@@ -60,8 +60,8 @@ dbo
 ```
 
 ## Tabelle
-Il campo `GroupId` contenuto nelle tabelle [User](https://github.com/cartaphilvss/AccessControlSystem/blob/main/BadgeSystemMinimalAPIApp/BadgeSystemDatabase/dbo/Tables/User.sql) e [Sensor](https://github.com/cartaphilvss/AccessControlSystem/blob/main/BadgeSystemMinimalAPIApp/BadgeSystemDatabase/dbo/Tables/Sensor.sql) permette di identificare i permessi di accesso degli utenti.
-La tabella [Group](https://github.com/cartaphilvss/AccessControlSystem/blob/main/BadgeSystemMinimalAPIApp/BadgeSystemDatabase/dbo/Tables/Group.sql) rappresenta i permessi del sistema.
+Il campo `GroupId` contenuto nelle tabelle [User](https://github.com/Exsus-Labs/AccessControlSystem/blob/main/BadgeSystemMinimalAPIApp/BadgeSystemDatabase/dbo/Tables/User.sql) e [Sensor](https://github.com/Exsus-Labs/AccessControlSystem/blob/main/BadgeSystemMinimalAPIApp/BadgeSystemDatabase/dbo/Tables/Sensor.sql) permette di identificare i permessi di accesso degli utenti.
+La tabella [Group](https://github.com/Exsus-Labs/AccessControlSystem/blob/main/BadgeSystemMinimalAPIApp/BadgeSystemDatabase/dbo/Tables/Group.sql) rappresenta i permessi del sistema.
 ```SQL
 CREATE TABLE [dbo].[Group] (
     [id] INT NOT NULL PRIMARY KEY IDENTITY (1,1),
@@ -90,7 +90,7 @@ CREATE TABLE [dbo].[Sensor]
 
 ```
 
-I campi `UserId` e `NFC_Tag` della tabella [Badge](https://github.com/cartaphilvss/AccessControlSystem/blob/main/BadgeSystemMinimalAPIApp/BadgeSystemDatabase/dbo/Tables/Badge.sql) consentono di ottenere, tramite le apposite API, i record degli utenti e sensori coinvolti nella comunicazione.
+I campi `UserId` e `NFC_Tag` della tabella [Badge](https://github.com/Exsus-Labs/AccessControlSystem/blob/main/BadgeSystemMinimalAPIApp/BadgeSystemDatabase/dbo/Tables/Badge.sql) consentono di ottenere, tramite le apposite API, i record degli utenti e sensori coinvolti nella comunicazione.
 ```SQL
 CREATE TABLE [dbo].[Badge] (
     [id] INT NOT NULL PRIMARY KEY IDENTITY (1,1),
@@ -99,7 +99,7 @@ CREATE TABLE [dbo].[Badge] (
 );
 ```
 
-La tabella [Log](https://github.com/cartaphilvss/AccessControlSystem/blob/main/BadgeSystemMinimalAPIApp/BadgeSystemDatabase/dbo/Tables/Log.sql) permette di tenere traccia di tutti gli accessi effettuati nel sistema.
+La tabella [Log](https://github.com/Exsus-Labs/AccessControlSystem/blob/main/BadgeSystemMinimalAPIApp/BadgeSystemDatabase/dbo/Tables/Log.sql) permette di tenere traccia di tutti gli accessi effettuati nel sistema.
 ```SQL
 CREATE TABLE [dbo].[Log]
 (
@@ -110,7 +110,7 @@ CREATE TABLE [dbo].[Log]
 )
 ```
 
-La tabella [AccessToken](https://github.com/cartaphilvss/AccessControlSystem/blob/main/BadgeSystemMinimalAPIApp/BadgeSystemDatabase/dbo/Tables/AccessToken.sql) contiene il campo `Token` che consente l'accesso all'applicazione mobile.
+La tabella [AccessToken](https://github.com/Exsus-Labs/AccessControlSystem/blob/main/BadgeSystemMinimalAPIApp/BadgeSystemDatabase/dbo/Tables/AccessToken.sql) contiene il campo `Token` che consente l'accesso all'applicazione mobile.
 ```SQL
 CREATE TABLE [dbo].[AccessToken]
 (
@@ -205,7 +205,7 @@ Stored Procedures
 
 ## Database Access
 
-L’interfaccia [ISQLDataAccess](https://github.com/cartaphilvss/AccessControlSystem/blob/main/BadgeSystemMinimalAPIApp/DataAccess/DatabaseAccess/ISQLDataAccess.cs), tramite i metodi [LoadData] e [SavaData], permette di accedere al database.
+L’interfaccia [ISQLDataAccess](https://github.com/Exsus-Labs/AccessControlSystem/blob/main/BadgeSystemMinimalAPIApp/DataAccess/DatabaseAccess/ISQLDataAccess.cs), tramite i metodi [LoadData] e [SavaData], permette di accedere al database.
 ```cs
 public class SQLDataAccess : ISQLDataAccess
 {
@@ -235,8 +235,8 @@ La comunicazione con il database avviene mediante le [Stored Procedures] che con
 
 ## Modelli
 
-Le [Tabelle presenti nel database](https://github.com/cartaphilvss/AccessControlSystem/tree/main/BadgeSystemMinimalAPIApp/BadgeSystemDatabase/dbo/Tables) vengono rappresentate dai loro singoli [Modelli](https://github.com/cartaphilvss/AccessControlSystem/tree/main/BadgeSystemMinimalAPIApp/DataAccess/Models).
-I [DataModel](https://github.com/cartaphilvss/AccessControlSystem/tree/main/BadgeSystemMinimalAPIApp/DataAccess/Data) implementano i metodi: { `get`, `getAll`, `insert`, `update`, `delete` } per le operazioni CRUD. Ogni DataModel presenta una propria Interfaccia [IDataModel](https://github.com/cartaphilvss/AccessControlSystem/tree/main/BadgeSystemMinimalAPIApp/DataAccess/Data) che lavora sul [Model](https://github.com/cartaphilvss/AccessControlSystem/tree/main/BadgeSystemMinimalAPIApp/DataAccess/Data) ad esso associato.
+Le [Tabelle presenti nel database](https://github.com/Exsus-Labs/AccessControlSystem/tree/main/BadgeSystemMinimalAPIApp/BadgeSystemDatabase/dbo/Tables) vengono rappresentate dai loro singoli [Modelli](https://github.com/Exsus-Labs/AccessControlSystem/tree/main/BadgeSystemMinimalAPIApp/DataAccess/Models).
+I [DataModel](https://github.com/Exsus-Labs/AccessControlSystem/tree/main/BadgeSystemMinimalAPIApp/DataAccess/Data) implementano i metodi: { `get`, `getAll`, `insert`, `update`, `delete` } per le operazioni CRUD. Ogni DataModel presenta una propria Interfaccia [IDataModel](https://github.com/Exsus-Labs/AccessControlSystem/tree/main/BadgeSystemMinimalAPIApp/DataAccess/Data) che lavora sul [Model](https://github.com/Exsus-Labs/AccessControlSystem/tree/main/BadgeSystemMinimalAPIApp/DataAccess/Data) ad esso associato.
 ```cs
     # Esempio Modello:
     public class UserModel : CreateUserModel
@@ -291,10 +291,10 @@ builder.Services.AddSingleton<IModelData, ModelData>();
 ...
 ```
 # Minimal REST APIs
-![Swagger](https://github.com/cartaphilvss/AccessControlSystem/blob/main/assets/imgs/swagger-ui-1.PNG)
+![Swagger](https://github.com/Exsus-Labs/AccessControlSystem/blob/main/assets/imgs/swagger-ui-1.PNG)
 
 Realizzazione delle API mediante l'[Open API (Swagger)](https://swagger.io/)
-![Swagger UI](https://github.com/cartaphilvss/AccessControlSystem/blob/main/assets/imgs/swagger-ui-api-call.PNG)
+![Swagger UI](https://github.com/Exsus-Labs/AccessControlSystem/blob/main/assets/imgs/swagger-ui-api-call.PNG)
 Documentazione delle API mediante [Swagger UI](https://swagger.io/tools/swagger-ui/)
 
 Nel metodo `ConfigureAPI` si specifica il tipo di [Richiesta HTTP](https://it.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Messaggio_di_richiesta), si associa l’`URL` della richiesta ed il `Metodo di Callback` da eseguire.
@@ -302,7 +302,7 @@ Nel metodo `ConfigureAPI` si specifica il tipo di [Richiesta HTTP](https://it.wi
 app.Method(URL, CallbackMethod);
 ```
 
-Le API vengono gestite nella classe [API](https://github.com/cartaphilvss/AccessControlSystem/blob/main/BadgeSystemMinimalAPIApp/BadgeSystemMinimalAPI/API.cs):
+Le API vengono gestite nella classe [API](https://github.com/Exsus-Labs/AccessControlSystem/blob/main/BadgeSystemMinimalAPIApp/BadgeSystemMinimalAPI/API.cs):
 ```cs
 private static readonly string _apiBaseUrl = "/api";
 public static void ConfigureAPI(this WebApplication app)
@@ -341,12 +341,12 @@ L’applicazione e’ stata realizzata con Xamarin, mentre la interfaccia utente
 
 Struttura dell’applicazione mobile:
 
-![image.png](https://github.com/cartaphilvss/AccessControlSystem/blob/main/assets/imgs/MobileApplicationStructure.drawio.png)
+![image.png](https://github.com/Exsus-Labs/AccessControlSystem/blob/main/assets/imgs/MobileApplicationStructure.drawio.png)
 
 ## Pages
 | Invalid Login | Valid Login | Pages |
 |---------------|-------------|-------|
-| ![invalid-login](https://github.com/cartaphilvss/AccessControlSystem/blob/main/assets/gifs/mobile-invalid-login.gif) | ![valid-login](https://github.com/cartaphilvss/AccessControlSystem/blob/main/assets/gifs/mobile-welcome.gif) | ![pages](https://github.com/cartaphilvss/AccessControlSystem/blob/main/assets/gifs/mobile-all.gif)
+| ![invalid-login](https://github.com/Exsus-Labs/AccessControlSystem/blob/main/assets/gifs/mobile-invalid-login.gif) | ![valid-login](https://github.com/Exsus-Labs/AccessControlSystem/blob/main/assets/gifs/mobile-welcome.gif) | ![pages](https://github.com/Exsus-Labs/AccessControlSystem/blob/main/assets/gifs/mobile-all.gif)
 
 
 Ecco cosa fa ciascuna della pagine: 
@@ -411,7 +411,7 @@ La modalita’ che abbiamo usata noi per la realizzazione del sistema di accesso
 Il sensore e’ [NodeMCU ESP8266 ESP12-E Amica v2](https://www.amazon.it/AZDelivery-NodeMCU-esp8266-esp-12e-gratuito/dp/B06Y1LZLLY/ref=sr_1_3?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=4EQXZV5P4QEI&keywords=nodemcu+esp8266+amica+v2&qid=1655200180&s=pc&sprefix=nodemcu+esp8266+amica+v2%2Ccomputers%2C85&sr=1-3) una scheda di sviluppo Open Source utilizzata principalmente per dispositivi IoT. 
 Questi sono i pin di uscita della scheda:
 
-![image.png](https://github.com/cartaphilvss/AccessControlSystem/blob/main/assets/imgs/NodeMCU-ESP8266-Pinout.jpg)
+![image.png](https://github.com/Exsus-Labs/AccessControlSystem/blob/main/assets/imgs/NodeMCU-ESP8266-Pinout.jpg)
 
 Per ulteriori informazioni fare riferimento al datasheet del [ESP8266](https://espressif.com/sites/default/files/documentation/0a-esp8266ex_datasheet_en.pdf) o la [Documentazione NodeMCU](https://nodemcu.readthedocs.io/en/release/).
 
@@ -425,7 +425,7 @@ Versioni utilizzate:
 ### Funzionamento
 Lo schema circuitale del sensore e’ molto semplice:
 
-![image.png](https://github.com/cartaphilvss/AccessControlSystem/blob/main/assets/imgs/circuit%20design.png)
+![image.png](https://github.com/Exsus-Labs/AccessControlSystem/blob/main/assets/imgs/circuit%20design.png)
 
 Prima di tutto il microcontrollore deve avere accesso alla rete quindi inizializziamo la connessione nella funzione `Setup()`, la prima funzione chiamata dal microcontrollore al momento dell’accensione. Il codice che inizializza la connessione al Wi-Fi e’ il seguente: 
 ```c
@@ -498,10 +498,10 @@ L'Applicazione presenta la seguente interfaccia:
 - Logs: Pagina in cui vengono visualizzati le informazioni relative agli accessi avvenuti.
 
 ## Login
-![Retefagioli-Web-App-login](https://github.com/cartaphilvss/AccessControlSystem/blob/main/assets/gifs/login.done-gif.gif)
+![Retefagioli-Web-App-login](https://github.com/Exsus-Labs/AccessControlSystem/blob/main/assets/gifs/login.done-gif.gif)
 ## User
-![Retefagioli-Web-App-users](https://github.com/cartaphilvss/AccessControlSystem/blob/main/assets/gifs/users-gif.gif)
+![Retefagioli-Web-App-users](https://github.com/Exsus-Labs/AccessControlSystem/blob/main/assets/gifs/users-gif.gif)
 ## Modifica
-![Retefagioli-Web-App-modify-users](https://github.com/cartaphilvss/AccessControlSystem/blob/main/assets/gifs/modify-users-gif.gif)
+![Retefagioli-Web-App-modify-users](https://github.com/Exsus-Labs/AccessControlSystem/blob/main/assets/gifs/modify-users-gif.gif)
 ## Groups & Logs
-![Retefagioli-Web-App-groups-logs](https://github.com/cartaphilvss/AccessControlSystem/blob/main/assets/gifs/all-gif.gif)
+![Retefagioli-Web-App-groups-logs](https://github.com/Exsus-Labs/AccessControlSystem/blob/main/assets/gifs/all-gif.gif)
